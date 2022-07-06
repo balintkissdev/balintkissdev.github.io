@@ -1,7 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Balint Kiss Resume`,
-    siteUrl: `https://www.yourdomain.tld`,
+    title: "Balint Kiss",
   },
-  plugins: [],
+  plugins: [
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp"
+  ],
 }
