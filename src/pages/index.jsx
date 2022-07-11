@@ -169,7 +169,7 @@ const IndexPage = () => {
               </div>
               <div className="col-sm-8">
                 <h2>University of West Hungary</h2>
-                <p>Bachelor of Science (M.Sc.), Business Informatics Engineer - Software Development specialization</p>
+                <p>Bachelor of Science (B.Sc.), Business Informatics Engineer - Software Development specialization</p>
                 <p>Bachelor thesis: <i>NoSQL Database System and Creation of
                   Related Analytic Methods</i></p>
               </div>
