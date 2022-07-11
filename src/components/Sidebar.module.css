@@ -1,7 +1,57 @@
+#sideNav {
+    background-color: #383838;
+}
+
 #sideNav .navbar-nav .nav-item .nav-link {
     font-weight: 800;
     letter-spacing: 0.05rem;
     text-transform: uppercase;
+}
+
+.navbar-links .navbar-nav {
+    display: flex;
+    padding-left: 0;
+    padding-bottom: 0;
+    flex-direction: column;
+    justify-content: center;
+
+    width: 100%;
+    list-style-type: none;
+}
+
+.navbar-links .navbar-nav .nav-item .nav-link {
+    display: block;
+    color: whitesmoke;
+    text-decoration: none;
+    padding: .5rem 1rem;
+    text-align: center;
+}
+
+.navbar-links .navbar-nav .nav-item .nav-link:hover {
+    color: burlywood;
+}
+
+.site-title {
+    font-size: 3rem;
+    color: gray;
+    font-weight: 700;
+    margin: 3rem 0;
+}
+
+.social-icons a {
+    font-size: 26px;
+    margin: 0 10px 0 0;
+    color: #383838;
+    text-decoration: none;
+    background: whitesmoke;
+    padding: 10px;
+    width: 50px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+.social-icons a:hover {
+    background: burlywood;
 }
 
 @media (min-width: 992px) {
@@ -15,8 +65,6 @@
 
         width: 17rem;
         height: 100vh;
-
-        background-color: #383838;
     }
 
     .navbar-avatar {
@@ -34,50 +82,11 @@
         margin-bottom: auto;
     }
 
-    .navbar-links .navbar-nav {
-        display: flex;
-        padding-left: 0;
-        padding-bottom: 0;
-        flex-direction: column;
-
-        width: 100%;
-    }
-
     .navbar-links .navbar-nav .nav-item {
         display: block;
     }
 
     .navbar-links .navbar-nav .nav-item .nav-link {
-        display: block;
-        color: whitesmoke;
-        text-decoration: none;
-        padding: .5rem 1rem;
+        text-align: left;
     }
-
-    .navbar-links .navbar-nav .nav-item .nav-link:hover {
-        color: burlywood;
-    }
-}
-
-.site-title {
-    font-size: 3rem;
-    color: gray;
-    font-weight: 700;
-    margin: 3rem 0;
-}
-
-.social-icons a {
-    font-size: 26px;  
-    margin: 0 10px 0 0; 
-    color: #383838; 
-    text-decoration: none; 
-    background: whitesmoke;
-    padding: 10px;
-    width: 50px;
-    text-align: center;
-    border-radius: 50%;
-}
-
-.social-icons a:hover {
-    background: burlywood;
 }

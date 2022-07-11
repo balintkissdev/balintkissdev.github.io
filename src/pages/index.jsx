@@ -1,8 +1,9 @@
 import * as React from 'react'
+import { StaticImage } from 'gatsby-plugin-image'
 import ExperienceSection from '../components/ExperienceSection'
 import Layout from '../components/Layout'
 import ResumeSection from '../components/ResumeSection'
-import SideBar from '../components/Sidebar'
+import Sidebar from '../components/Sidebar'
 import SideProjectCard from '../components/SideProjectCard'
 
 const fullTimeExperiences = [
@@ -119,9 +120,16 @@ const contractingExperiences = [
 const IndexPage = () => {
   return (
     <Layout>
-      <SideBar />
+      <Sidebar />
       <div className="p-0">
-        <ResumeSection id="about" title="Balint Kiss">
+        <ResumeSection id="about">
+          <div className="d-flex justify-content-center d-lg-none pt-5">
+            <StaticImage
+              className="rounded-circle w-50"
+              src="../images/cv_profile.jpg"
+            />
+          </div>
+          <h1 className="d-flex justify-content-center display-1 fw-bold mb-3">Balint<span class="text-muted">&nbsp;Kiss</span></h1>
           <p className="lead mb-5">
             Experienced software developer in the field of IoT with Master's in
             Computer Science. Fluent in modern C++, Go, Python and using Linux for
