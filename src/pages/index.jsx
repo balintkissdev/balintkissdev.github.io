@@ -170,28 +170,28 @@ const IndexPage = () => {
         </ResumeSection>
 
         <ResumeSection id="projects" title="Side projects">
-          <div className="row">
-            <SideProjectCard
-              title="Raycasting pseudo-3D graphics engine"
-              url="https://github.com/balintkissdev/raycaster-engine"
-            >
-              A 3D graphics engine inspired by the one used in Wolfenstein 3D.
-              Written in C++ with SDL2. Uses vector math to turn 2D maps into 3D
-              space, includes double buffering and texture mapping. <a
-                href="https://balintkissdev.github.io/raycaster-engine/"
-                target="_blank">Browser-playable live demo</a> is compiled with
-              Emscripten.
-            </SideProjectCard>
+            <div className="row g-4">
+              <SideProjectCard
+                title="Raycasting pseudo-3D graphics engine"
+                url="https://github.com/balintkissdev/raycaster-engine"
+              >
+                A 3D graphics engine inspired by the one used in Wolfenstein 3D.
+                Written in C++ with SDL2. Uses vector math to turn 2D maps into 3D
+                space, includes double buffering and texture mapping. <a
+                  href="https://balintkissdev.github.io/raycaster-engine/"
+                  target="_blank">Browser-playable live demo</a> is compiled with
+                Emscripten.
+              </SideProjectCard>
 
-            <SideProjectCard
-              title="Awesome DOS"
-              url="https://github.com/balintkissdev/awesome-dos"
-            >
-              Curated list of references for development of DOS applications and
-              learning about the system itself. The goal of this list is to collect
-              information and act as a starting point for someone who wants to start
-              out retro-programming for the DOS platform.
-            </SideProjectCard>
+              <SideProjectCard
+                title="Awesome DOS"
+                url="https://github.com/balintkissdev/awesome-dos"
+              >
+                Curated list of references for development of DOS applications and
+                learning about the system itself. The goal of this list is to collect
+                information and act as a starting point for someone who wants to start
+                out retro-programming for the DOS platform.
+              </SideProjectCard>
           </div>
         </ResumeSection>
 
