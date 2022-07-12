@@ -5,11 +5,9 @@ import {
 
 const Layout = ({ children }) => {
     return (
-        <div className={mainBody}>
-            <main>
-                {children}
-            </main>
-        </div>
+        <main className={mainBody + " h-100 d-flex align-items-center justify-content-center"}>
+            {children}
+        </main >
     )
 }
 
