@@ -131,13 +131,12 @@ const IndexPage = () => {
           </div>
           <h1 className="d-flex justify-content-center display-1 fw-bold mb-3">Balint<span class="text-muted">&nbsp;Kiss</span></h1>
           <p className="lead mb-5">
-            Experienced software developer in the field of IoT with Master's in
-            Computer Science. Fluent in modern C++, Go, Python and using Linux for
-            development. I'm a software technology enthusiast and always apply best
-            practices and engineering principles to my work.
-            I'm a software technology enthusiast who keeps improving his skills
-            and always apply best practices and engineering principles to my
-            work.
+            Passionate software developer with 6+ years of experience, providing
+            my talent in the field of cloud computing and IoT. I'm a software
+            technology enthusiast who keeps improving his skills and always
+            apply best practices and engineering principles when providing
+            technical solutions in order to solve the business needs of my
+            client.
           </p>
           <p className="lead mb-5">
             This site was created by me using <a href="https://reactjs.org/" target="_blank">React</a> with <a href="https://www.gatsbyjs.com/" target="_blank">GatsbyJS</a>.
