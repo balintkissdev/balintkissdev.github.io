@@ -12,8 +12,7 @@ import {
 
 const sideBarLinks = [
     { name: "About", href: "about" },
-    { name: "Full-time experience", href: "experience" },
-    { name: "Contracting experience", href: "freelance" },
+    { name: "Experience", href: "experience" },
     { name: "Education", href: "education" },
     { name: "Side projects", href: "projects" },
     { name: "Skills", href: "skills" },

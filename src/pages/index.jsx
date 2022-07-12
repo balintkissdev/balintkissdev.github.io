@@ -6,9 +6,9 @@ import ResumeSection from '../components/ResumeSection'
 import Sidebar from '../components/Sidebar'
 import SideProjectCard from '../components/SideProjectCard'
 
-const fullTimeExperiences = [
+const professionalExperience = [
   {
-    company: "DMG MORI Heitec Digital Ltd.",
+    heading: "DMG MORI Heitec Digital Ltd.",
     roles: [
       {
         name: "Senior Software Engineer (C++, Go)",
@@ -30,7 +30,21 @@ const fullTimeExperiences = [
     ]
   },
   {
-    company: "evosoft Hungary Ltd.",
+    heading: "Freelance Embedded Developer",
+    roles: [
+      {
+        name: "ME Embedded Ltd.",
+        start: "February 2019",
+        end: "June 2019",
+      },
+    ],
+    responsibilities: [
+      `Developed IoT software using C++11/14, serial communication and MQTT.`,
+      `Created embedded UI with Qt 5 and QML.`,
+    ]
+  },
+  {
+    heading: "evosoft Hungary Ltd.",
     roles: [
       {
         name: "Senior Software Engineer (C++)",
@@ -59,7 +73,7 @@ const fullTimeExperiences = [
     ]
   },
   {
-    company: "GE Healthcare",
+    heading: "GE Healthcare",
     roles: [
       {
         name: "Software Intern (Java)",
@@ -78,25 +92,8 @@ const fullTimeExperiences = [
       deployed to Cloud Foundry cloud environment, virtualization with Docker.`
     ]
   },
-]
-
-const contractingExperiences = [
   {
-    company: "ME Embedded Ltd.",
-    roles: [
-      {
-        name: "Freelance Embedded Developer (C++)",
-        start: "February 2019",
-        end: "June 2019",
-      },
-    ],
-    responsibilities: [
-      `Developed IoT software using C++11/14, serial communication and MQTT.`,
-      `Created embedded UI with Qt 5 and QML.`,
-    ]
-  },
-  {
-    company: "University of West Hungary",
+    heading: "University of West Hungary",
     roles: [
       {
         name: "Research Software Developer (Java, R)",
@@ -143,12 +140,8 @@ const IndexPage = () => {
           </p>
         </ResumeSection>
 
-        <ResumeSection id="experience" title="Full-time professional experience">
-          <ExperienceSection experiences={fullTimeExperiences} />
-        </ResumeSection>
-
-        <ResumeSection id="freelance" title="Contracting experience">
-          <ExperienceSection experiences={contractingExperiences} />
+        <ResumeSection id="experience" title="Professional experience">
+          <ExperienceSection experiences={professionalExperience} />
         </ResumeSection>
 
         <ResumeSection id="education" title="Education">
