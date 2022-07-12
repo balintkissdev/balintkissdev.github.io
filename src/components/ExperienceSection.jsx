@@ -1,11 +1,12 @@
 import * as React from 'react'
+import Badge from './Badge'
 
 const ExperienceSection = ({ experiences }) => {
     return (
         <>
             {
                 experiences.map((experience) => (
-                    <div className="mb-5">
+                    <div className="container mb-5">
                         <h2 className="mb-3">{experience.heading}</h2>
                         {
                             experience.roles.map((role) => (
@@ -18,6 +19,21 @@ const ExperienceSection = ({ experiences }) => {
                                     </div>
                                 </div>
                             ))
+                        }
+                        {
+                            experience.badges &&
+                            <div className="row mb-3">
+                                <div className="col-sm-2"></div>
+                                <div className="col-sm-8">
+                                    <p>
+                                        {
+                                            experience.badges.map((badge) => (
+                                                <Badge>{badge}</Badge>
+                                            ))
+                                        }
+                                    </p>
+                                </div>
+                            </div>
                         }
                         <div className="row">
                             <div className="col-sm-2"></div>

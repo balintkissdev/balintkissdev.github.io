@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import Badge from '../components/Badge'
 import ExperienceSection from '../components/ExperienceSection'
 import Layout from '../components/Layout'
 import ResumeSection from '../components/ResumeSection'
@@ -11,21 +12,21 @@ const professionalExperience = [
     heading: "DMG MORI Heitec Digital Ltd.",
     roles: [
       {
-        name: "Senior Software Engineer (C++, Go)",
+        name: "Senior Software Engineer",
         start: "January 2022",
       },
       {
-        name: "Software Engineer (C++, Go)",
+        name: "Software Engineer",
         start: "October 2020",
         end: "January 2022"
       }
     ],
+    badges: ["C++17", "Go", "NATS", "gRPC", "OPC UA", "MQTT", "REST", "OpenAPI",
+      "Google Protocol Buffers", "Google Test", "Google Mock", "Microsoft Azure", "Docker"],
     responsibilities: [
       `Developing Industry 4.0 cloud backend microservices for the CELOS Next
-      product using C++17 and Go.`,
-      `Implementing messaging with the following communication protocols: REST
-      (OpenAPI, Swagger), NATS, gRPC, OPC UA, MQTT.`,
-      `PLC/NC machine data serialization using Google's Protocol Buffers.`,
+      product.`,
+      `PLC/NC machine data to industrial communication protocol serialization.`,
       `Maintaining IoT Edge modules in the Microsoft Azure IoT Edge cloud platform.`,
     ]
   },
@@ -38,78 +39,78 @@ const professionalExperience = [
         end: "June 2019",
       },
     ],
+    badges: ["C++14", "Raspberry Pi", "Qt 5", "QML", "MQTT"],
     responsibilities: [
-      `Developed IoT software using C++11/14, serial communication and MQTT.`,
-      `Created embedded UI with Qt 5 and QML.`,
+      `Developed embedded UI for a medical equipment's touch screen device.`,
+      `Forwarded machine state from serial I/O to an IoT server.`,
     ]
   },
   {
     heading: "evosoft Hungary Ltd.",
     roles: [
       {
-        name: "Senior Software Engineer (C++)",
+        name: "Senior Software Engineer",
         start: "November 2018",
         end: "October 2020",
       },
       {
-        name: "Software Engineer (C++)",
+        name: "Software Engineer",
         start: "November 2017",
         end: "November 2018"
       },
       {
-        name: "Junior Software Engineer (C++)",
+        name: "Junior Software Engineer",
         start: "January 2017",
         end: "November 2017"
       }
     ],
+    badges: ["C++14", "Qt 5", "Google Test", "Google Mock", "Win32 API", "Python", "Bash", "Perl", "Tcl"],
     responsibilities: [
       `Developed product- and test code to multiple in-house software products
       for the Siemens SINUMERIK system platform in the field of industrial
-      automation using C++11/14, Qt 5 and Win32 API.`,
-      `Refactored legacy Perl testing framework to BDD tests using Python,
-      reducing test maintenance effort by 70%.`,
-      `Took responsibility in improving the workflow processes and introduced tools to the team`,
-      `Maintained automation scripts written in Bash, Tcl, Perl and Python.`,
+      automation.`,
+      `Refactored legacy testing framework to BDD tests, reducing test
+      maintenance effort by 70%.`,
+      `Took responsibility in improving the workflow processes and introduced tools to the team.`,
+      `Maintained automation scripts.`,
     ]
   },
   {
     heading: "GE Healthcare",
     roles: [
       {
-        name: "Software Intern (Java)",
+        name: "Software Intern",
         start: "July 2015",
         end: "July 2016",
       }
     ],
+    badges: ["Java", "Spring Boot", "REST", "RabbitMQ", "Cloud Foundry", "Docker",
+      "JUnit", "Mockito", "JBehave", "Selenium"],
     responsibilities: [
-      `Developed REST-based microservices for a cloud-based medical imaging
-      software within the Predix platform using Java with Spring Framework.
-      Communication between microservices was done through AMQP messaging
-      protocol (RabbitMQ).`,
-      `Created unit tests with JUnit and Mockito, BDD tests with JBehave and
-      Selenium.`,
+      `Developed microservices for a cloud-based medical imaging
+      software within the Predix platform.`,
       `Member of the division's "DevOps Guild", maintaining applications
-      deployed to Cloud Foundry cloud environment, virtualization with Docker.`
+      deployed to the cloud environment.`
     ]
   },
   {
     heading: "University of West Hungary",
     roles: [
       {
-        name: "Research Software Developer (Java, R)",
+        name: "Research Software Developer",
         start: "June 2013",
         end: "January 2015"
       }
     ],
+    badges: ["Java", "R", "RapidMiner", "Apache Tomcat", "MongoDB", "VMware ESXi"],
     responsibilities: [
-      `Developed an analytic logic module using Java for a data analytic
-      framework used in 25294/207 TÁMOP-4.2.2.C-11/1/KONV-2012-0015 Earth-system
+      `Developed a multivariate regression analytic plugin for our data analytic
+      framework used in the 25294/207 TÁMOP-4.2.2.C-11/1/KONV-2012-0015 Earth-system
       research project.`,
-      `Implemented a scientific data analytic process using R statistical
-      programming language and RapidMiner data science platform.`,
-      `Created a RapidMiner plugin and interfaced RapidMiner with our data analytic framework.`,
-      `Administered an Apache Tomcat web server and a MongoDB database on a
-      virtual Debian machine running on VMware ESXi.`
+      `Presented my research work on multiple conferences and was co-author in
+      the publications.`,
+      `Administered a virtual web server running in the cloud, supporting
+      multiple members of the research project.`
     ]
   }
 ]
@@ -170,28 +171,51 @@ const IndexPage = () => {
         </ResumeSection>
 
         <ResumeSection id="projects" title="Side projects">
-            <div className="row g-4">
-              <SideProjectCard
-                title="Raycasting pseudo-3D graphics engine"
-                url="https://github.com/balintkissdev/raycaster-engine"
-              >
-                A 3D graphics engine inspired by the one used in Wolfenstein 3D.
-                Written in C++ with SDL2. Uses vector math to turn 2D maps into 3D
-                space, includes double buffering and texture mapping. <a
-                  href="https://balintkissdev.github.io/raycaster-engine/"
-                  target="_blank">Browser-playable live demo</a> is compiled with
-                Emscripten.
-              </SideProjectCard>
+          <div className="row g-4">
+            <SideProjectCard
+              title="Raycasting pseudo-3D graphics engine"
+              url="https://github.com/balintkissdev/raycaster-engine"
+              badges={["C++", "SDL2", "CMake", "Emscripten", "WebAssembly"]}
+            >
+              <p>
+                Retro 3D graphics engine inspired by the one used in Wolfenstein
+                3D.  Uses vector math to turn 2D maps into 3D space, includes
+                double-buffering and texture mapping.
+              </p>
+              <p>
+                A <a href="https://balintkissdev.github.io/raycaster-engine/"
+                target="_blank">browser-playable live demo</a> is available.
+              </p>
+            </SideProjectCard>
 
-              <SideProjectCard
-                title="Awesome DOS"
-                url="https://github.com/balintkissdev/awesome-dos"
-              >
-                Curated list of references for development of DOS applications and
-                learning about the system itself. The goal of this list is to collect
-                information and act as a starting point for someone who wants to start
-                out retro-programming for the DOS platform.
-              </SideProjectCard>
+            <SideProjectCard
+              title="My resume website"
+              url="https://github.com/balintkissdev/balintkissdev.github.io"
+              badges={["React", "HTML", "CSS", "GatsbyJS", "Bootstrap 5"]}
+            >
+              <a href="#top">This</a> mobile-first responsive site for my resume
+              to showcase my web development abilities.
+            </SideProjectCard>
+
+            <SideProjectCard
+              title="Awesome DOS"
+              url="https://github.com/balintkissdev/awesome-dos#readme"
+              badges={["Markdown"]}
+            >
+              <p>
+                Curated list of references for development of DOS applications
+                and learning about the system itself. The goal of this list is
+                to collect information and act as a starting point for someone
+                who wants to start out retro-programming for the DOS platform.
+              </p>
+              <p>
+                This list is <a
+                href="https://twitter.com/awesome__re/status/1355813614469271555"
+                target="_blank">featured</a> on the official <a
+                href="https://github.com/sindresorhus/awesome"
+                target="_blanK">Awesome collection</a> made by Sindre Sorhus.
+              </p>
+            </SideProjectCard>
           </div>
         </ResumeSection>
 
