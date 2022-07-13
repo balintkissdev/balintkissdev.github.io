@@ -6,8 +6,8 @@ const ExperienceSection = ({ experiences }) => {
         <>
             {
                 experiences.map((experience) => (
-                    <div className="container mb-5">
-                        <h2 className="mb-3">{experience.heading}</h2>
+                    <div className="container mb-3">
+                        <h2 className="mb-2">{experience.heading}</h2>
                         {
                             experience.roles.map((role) => (
                                 <div className="row mb-3">
@@ -22,7 +22,7 @@ const ExperienceSection = ({ experiences }) => {
                         }
                         {
                             experience.badges &&
-                            <div className="row mb-3">
+                            <div className="row">
                                 <div className="col-sm-2"></div>
                                 <div className="col-sm-8">
                                     <p>
