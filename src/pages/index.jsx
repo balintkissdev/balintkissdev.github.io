@@ -1,11 +1,11 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
-import Badge from '../components/Badge'
 import ExperienceSection from '../components/ExperienceSection'
 import Layout from '../components/Layout'
 import ResumeSection from '../components/ResumeSection'
 import Sidebar from '../components/Sidebar'
 import SideProjectCard from '../components/SideProjectCard'
+import TechSkillRow from '../components/TechSkillRow'
 
 const professionalExperience = [
   {
@@ -86,11 +86,11 @@ const professionalExperience = [
     ],
     badges: ["Java", "Spring Boot", "REST", "RabbitMQ", "Redis", "Cloud Foundry", "Docker", "JUnit", "Mockito", "JBehave", "Selenium"],
     responsibilities: [
-        `Developed microservices for a cloud-based medical imaging software
+      `Developed microservices for a cloud-based medical imaging software
         within the Predix platform.`,
-        `Member of the division's "DevOps Guild", maintaining applications
+      `Member of the division's "DevOps Guild", maintaining applications
         deployed to the cloud environment.`
-      ]
+    ]
   },
   {
     heading: "University of West Hungary",
@@ -220,97 +220,100 @@ const IndexPage = () => {
           </ResumeSection>
 
           <ResumeSection id="skills" title="Skills">
-            <div>
+            <div className="mb-3">
               <h2>Technical skills</h2>
-              <div class="mb-3">
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    C++-related skills
-                  </div>
-                  <div class="col-sm-8">
-                    C++98/11/14/17, STL, Make, CMake
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    C++ libraries and APIs
-                  </div>
-                  <div class="col-sm-8">
-                    Qt 5, QML, Boost, Win32 API, Google Test, SDL2
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    Other programming languages
-                  </div>
-                  <div class="col-sm-8">
-                    Go, Rust, C, Python, Java, Bash, LaTeX, Tcl, Perl
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    Version control
-                  </div>
-                  <div class="col-sm-8">
-                    Git, Perforce, ClearCase
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    Operating systems
-                  </div>
-                  <div class="col-sm-8">
-                    Microsoft Windows, Linux (Ubuntu, Debian, Red Hat), Solaris
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    Development tools
-                  </div>
-                  <div class="col-sm-8">
-                    GDB, Doxygen, Clang Tools, OpenAPI/Swagger, Google’s Protocol
-                    Buffers, Docker, CI Tools (Jenkins, Travis CI, AppVeyor)
-                  </div>
-                </div>
-
-                <div class="row">
-                  <div class="col-sm-3 fw-bold">
-                    IDEs and editors
-                  </div>
-                  <div class="col-sm-8">
-                    Vim, Visual Studio 2019, Visual Studio Code, Qt Creator
-                  </div>
-                </div>
-
-              </div>
+              <TechSkillRow
+                title="Programming languages"
+                skills={["C++", "Go", "Python", "Bash", "Rust", "R"]}
+              />
+              <TechSkillRow
+                title="C++-related technologies"
+                skills={
+                  ["CMake", "Make", "Qt", "QML", "Boost", "Google Test", "Clang Tools"]
+                }
+              />
+              <TechSkillRow
+                title="Cloud computing"
+                skills={
+                  ["Microsoft Azure", "Azure IoT Edge", "Cloud Foundry"]
+                }
+              />
+              <TechSkillRow
+                title="Web development"
+                skills={
+                  ["React", "JSX", "HTML5", "CSS", "Bootstrap 5"]
+                }
+              />
+              <TechSkillRow
+                title="Database systems"
+                skills={
+                  ["PostgreSQL", "MongoDB"]
+                }
+              />
+              <TechSkillRow
+                title="Containerization"
+                skills={
+                  ["Docker"]
+                }
+              />
+              <TechSkillRow
+                title="Operating systems"
+                skills={
+                  ["Microsoft Windows", "Debian", "Ubuntu", "Red Hat", "Fedora"]
+                }
+              />
+              <TechSkillRow
+                title="Version control"
+                skills={
+                  ["Git", "Perforce", "ClearCase"]
+                }
+              />
+              <TechSkillRow
+                title="Editors and IDEs"
+                skills={
+                  ["Vim", "Visual Studio Code", "Visual Studio", "Qt Creator"]
+                }
+              />
+              <TechSkillRow
+                title="Other"
+                skills={
+                  [
+                    "Design patterns",
+                    "Anti-patterns",
+                    "Agile methodologies (Scrum, SAFE)",
+                    "Test automation",
+                    "TDD",
+                    "BDD",
+                    "CI/CD",
+                    "UML",
+                    "API and library programming",
+                    "Functional programming",
+                  ]
+                }
+              />
             </div>
             <div className="mb-3">
-              <h2>Certifications</h2>
-              <p>
+              <h2 className="mb-3">Certifications</h2>
+              <a className="btn btn-secondary w-100" href="http://scr.istqb.org/?name=B%C3%A1lint+Kiss&number=&orderBy=relevancy&orderDirection=&dateStart=2018-06-29&dateEnd=2018-06-29&expiryStart=&expiryEnd=&certificationBody=23&examProvider=&certificationLevel=1&country=101&resultsPerPage=10" target="_blank">
                 ISTQB Certified Tester Foundation Level, International Software
-                Testing Qualifications Board.
-              </p>
+                Testing Qualifications Board
+              </a>
             </div>
             <div className="mb-3">
               <h2>Other skills</h2>
               <ul>
-                <li>Library API design, knowledge of Design Patterns, Anti-patterns and UML</li>
                 <li>Interest for new technologies, continous self-education</li>
-                <li>Quick learning and adapting to new environments and domains</li>
-                <li>Analytical skills, attention, precision</li>
+                <li>Quick learning, adapting to new environments and domains</li>
+                <li>Analytical approach, attention, precision</li>
                 <li>Presentation skills</li>
+                <li>Conducting interviews</li>
               </ul>
             </div>
 
             <div className="mb-3">
               <h2>Hobbies and interests</h2>
               <ul>
-                <li>Guitar playing</li>
+                <li>Playing the guitar for 14+ years, including playing in some music bands</li>
                 <li>Home studio mixing and mastering</li>
                 <li>Learning about game development</li>
               </ul>
