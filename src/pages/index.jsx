@@ -84,14 +84,13 @@ const professionalExperience = [
         end: "July 2016",
       }
     ],
-    badges: ["Java", "Spring Boot", "REST", "RabbitMQ", "Cloud Foundry", "Docker",
-      "JUnit", "Mockito", "JBehave", "Selenium"],
+    badges: ["Java", "Spring Boot", "REST", "RabbitMQ", "Redis", "Cloud Foundry", "Docker", "JUnit", "Mockito", "JBehave", "Selenium"],
     responsibilities: [
-      `Developed microservices for a cloud-based medical imaging
-      software within the Predix platform.`,
-      `Member of the division's "DevOps Guild", maintaining applications
-      deployed to the cloud environment.`
-    ]
+        `Developed microservices for a cloud-based medical imaging software
+        within the Predix platform.`,
+        `Member of the division's "DevOps Guild", maintaining applications
+        deployed to the cloud environment.`
+      ]
   },
   {
     heading: "University of West Hungary",
