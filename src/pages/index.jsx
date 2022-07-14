@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { StaticImage } from 'gatsby-plugin-image'
+import Button from '../components/Button'
 import ExperienceSection from '../components/ExperienceSection'
 import Layout from '../components/Layout'
 import ResumeSection from '../components/ResumeSection'
@@ -294,10 +295,10 @@ const IndexPage = () => {
             </div>
             <div className="mb-3">
               <h2 className="mb-3">Certifications</h2>
-              <a className="btn btn-secondary w-100" href="http://scr.istqb.org/?name=B%C3%A1lint+Kiss&number=&orderBy=relevancy&orderDirection=&dateStart=2018-06-29&dateEnd=2018-06-29&expiryStart=&expiryEnd=&certificationBody=23&examProvider=&certificationLevel=1&country=101&resultsPerPage=10" target="_blank">
+              <Button href="http://scr.istqb.org/?name=B%C3%A1lint+Kiss&number=&orderBy=relevancy&orderDirection=&dateStart=2018-06-29&dateEnd=2018-06-29&expiryStart=&expiryEnd=&certificationBody=23&examProvider=&certificationLevel=1&country=101&resultsPerPage=10">
                 ISTQB Certified Tester Foundation Level, International Software
                 Testing Qualifications Board
-              </a>
+              </Button>
             </div>
             <div className="mb-3">
               <h2>Other skills</h2>

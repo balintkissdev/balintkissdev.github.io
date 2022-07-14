@@ -1,5 +1,6 @@
 import * as React from 'react'
 import Badge from './Badge'
+import Button from './Button'
 
 const SideProjectCard = ({ title, url, badges, children }) => {
     return (
@@ -7,12 +8,12 @@ const SideProjectCard = ({ title, url, badges, children }) => {
             <div className="card" style={{ width: "18rem" }}> {/* TODO: Avoid inline style */}
                 <div className="card-body">
                     <div className="d-grid gap-2">
-                        <a className="btn btn-secondary mb-3" href={url} target="_blank">
+                        <Button href={url}>
                             <div className="row">
                                 <div classNme="col"><i className="fab fa-github fa-xl"></i></div>
                                 <div classNme="col">{title}</div>
                             </div>
-                        </a>
+                        </Button>
                     </div>
                     {badges &&
                         <div>

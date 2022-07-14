@@ -1,0 +1,13 @@
+.button {
+    background-color: rgb(122, 113, 113);
+    color: whitesmoke;
+    text-decoration: none;
+    padding: 10px;
+    text-align: center;
+    font-weight: 700;
+}
+
+.button:hover {
+    background-color: rgb(155, 148, 148);
+    color: whitesmoke;
+}
