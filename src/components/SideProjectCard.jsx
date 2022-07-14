@@ -2,7 +2,7 @@ import * as React from 'react'
 import Badge from './Badge'
 import Button from './Button'
 
-const SideProjectCard = ({ title, url, badges, children }) => {
+const SideProjectCard = ({ title, url, badges, domain, children }) => {
     return (
         <div className="col">
             <div className="card" style={{ width: "18rem" }}> {/* TODO: Avoid inline style */}
@@ -15,16 +15,18 @@ const SideProjectCard = ({ title, url, badges, children }) => {
                             </div>
                         </Button>
                     </div>
-                    {badges &&
-                        <div>
-                            <p>
-                                {
-                                    badges.map((badge) => (
-                                        <Badge>{badge}</Badge>
-                                    ))
-                                }
-                            </p>
-                        </div>
+                    {(domain || badges) && <div><p>
+                        {
+                            domain &&
+                            <Badge style={{ backgroundColor: "#702963" }}>
+                                {domain}
+                            </Badge>
+                        }
+                        {badges &&
+                            Badge.makeBadges(badges)
+
+                        }
+                    </p></div>
                     }
                     <p className="card-text">
                         {children}

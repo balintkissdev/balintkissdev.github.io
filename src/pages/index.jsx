@@ -176,6 +176,7 @@ const IndexPage = () => {
               <SideProjectCard
                 title="Raycasting pseudo-3D graphics engine"
                 url="https://github.com/balintkissdev/raycaster-engine"
+                domain="Graphics"
                 badges={["C++", "SDL2", "CMake", "Emscripten", "WebAssembly"]}
               >
                 <p>
@@ -192,6 +193,7 @@ const IndexPage = () => {
               <SideProjectCard
                 title="My resume website"
                 url="https://github.com/balintkissdev/balintkissdev.github.io"
+                domain="Web development"
                 badges={["React", "HTML", "CSS", "GatsbyJS", "Bootstrap 5"]}
               >
                 <a href="#top">This</a> mobile-first responsive site for my resume
