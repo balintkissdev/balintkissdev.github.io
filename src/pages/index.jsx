@@ -201,7 +201,6 @@ const IndexPage = () => {
               <SideProjectCard
                 title="Awesome DOS"
                 url="https://github.com/balintkissdev/awesome-dos#readme"
-                badges={["Markdown"]}
               >
                 <p>
                   Curated list of references for development of DOS applications
