@@ -37,7 +37,7 @@ const Sidebar = () => {
 
             <div className="collapse navbar-collapse" id="navbarResponsive">
                 <div className="container-fluid">
-                    <div className={navbarAvatar + " d-none d-lg-block"}>
+                    <div className={`${navbarAvatar} d-none d-lg-block mb-3`}>
                         <a href="#top">
                             <StaticImage
                                 className="rounded-circle"
