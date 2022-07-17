@@ -27,7 +27,7 @@ const professionalExperience = [
     responsibilities: [
       `Developing Industry 4.0 cloud backend microservices for the CELOS Next
       product.`,
-      `PLC/NC machine data to industrial communication protocol serialization.`,
+      `Forwarding PLC/NC machine data to various industrial communication protocol standards.`,
       `Maintaining IoT Edge modules in the Microsoft Azure IoT Edge cloud platform.`,
     ]
   },
@@ -73,7 +73,7 @@ const professionalExperience = [
       `Refactored legacy testing framework to BDD tests, reducing test
       maintenance effort by 70%.`,
       `Took responsibility in improving the workflow processes and introduced tools to the team.`,
-      `Maintained automation scripts.`,
+      `Maintained in-house tooling and automation scripts.`,
     ]
   },
   {
