@@ -47,8 +47,8 @@ function Sidebar() {
                     </div>
 
                     <div className={`${socialIcons} d-flex mb-3 justify-content-center`}>
-                        <a class="fab fa-linkedin" href="https://linkedin.com/in/balintkissdev" target="_blank"></a>
-                        <a class="fab fa-github" href="https://github.com/balintkissdev" target="_blank"></a>
+                        <a class="fab fa-linkedin" href="https://linkedin.com/in/balintkissdev" target="_blank" rel="noreferrer"></a>
+                        <a class="fab fa-github" href="https://github.com/balintkissdev" target="_blank" rel="noreferrer"></a>
                         <a class="fa-solid fa-envelope" href="mailto:balintkissdev@gmail.com"></a>
                     </div>
 

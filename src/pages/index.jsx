@@ -138,7 +138,7 @@ function IndexPage() {
               client.
             </p>
             <p className="lead mb-5">
-              This site was created by me using <a href="https://reactjs.org/" target="_blank">React</a> with <a href="https://www.gatsbyjs.com/" target="_blank">GatsbyJS</a>.
+              This site was created by me using <a href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a> with <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">GatsbyJS</a>.
             </p>
           </ResumeSection>
 
@@ -186,7 +186,8 @@ function IndexPage() {
                 </p>
                 <p>
                   A <a href="https://balintkissdev.github.io/raycaster-engine/"
-                    target="_blank">browser-playable live demo</a> is available.
+                  target="_blank" rel="noreferrer">browser-playable live
+                  demo</a> is available.
                 </p>
               </SideProjectCard>
 
@@ -212,10 +213,11 @@ function IndexPage() {
                 </p>
                 <p>
                   This list is <a
-                    href="https://twitter.com/awesome__re/status/1355813614469271555"
-                    target="_blank">featured</a> on the official <a
-                      href="https://github.com/sindresorhus/awesome"
-                      target="_blanK">Awesome collection</a> made by Sindre Sorhus.
+                  href="https://twitter.com/awesome__re/status/1355813614469271555"
+                  target="_blank" rel="noreferrer">featured</a> on the official
+                  <a href="https://github.com/sindresorhus/awesome"
+                  target="_blanK" rel="noreferrer">Awesome collection</a> made
+                  by Sindre Sorhus.
                 </p>
               </SideProjectCard>
             </div>
