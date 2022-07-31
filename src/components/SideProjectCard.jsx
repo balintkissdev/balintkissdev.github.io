@@ -10,8 +10,8 @@ function SideProjectCard({ title, url, badges, domain, children }) {
                     <div className="d-grid gap-2">
                         <Button href={url}>
                             <div className="row">
-                                <div classNme="col"><i className="fab fa-github fa-xl"></i></div>
-                                <div classNme="col">{title}</div>
+                                <div><i className="fab fa-github fa-xl"></i></div>
+                                <div>{title}</div>
                             </div>
                         </Button>
                     </div>
