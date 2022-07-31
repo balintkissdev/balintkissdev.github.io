@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { button } from './Button.module.css'
 
-const Button = ({ href, children }) => {
+function Button({ href, children }) {
     return (
         <a className={`${button} mb-3`} href={href} target="_blank">
             {children}

@@ -4,10 +4,10 @@ import {
     mainBody
 } from './Layout.module.css'
 
-const Layout = ({ children }) => {
+function Layout({ children }) {
     return (
         <div>
-            <main className={mainBody + " h-100 d-flex align-items-center justify-content-center"}>
+            <main className={`${mainBody} h-100 d-flex align-items-center justify-content-center`}>
                 {children}
             </main >
             <Footer />

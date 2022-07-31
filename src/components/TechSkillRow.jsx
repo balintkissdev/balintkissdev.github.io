@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Badge from './Badge'
 
-const TechSkillRow = ({ title, skills }) => {
+function TechSkillRow({ title, skills }) {
     return (
         <div class="row">
             <div class="col-sm-3 fw-bold">

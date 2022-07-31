@@ -115,7 +115,7 @@ const professionalExperience = [
   }
 ]
 
-const IndexPage = () => {
+function IndexPage() {
   return (
     <div>
       <Sidebar />

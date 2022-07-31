@@ -1,7 +1,7 @@
 import * as React from 'react'
 import Badge from './Badge'
 
-const ExperienceSection = ({ experiences }) => {
+function ExperienceSection({ experiences }) {
     return (
         <>
             {

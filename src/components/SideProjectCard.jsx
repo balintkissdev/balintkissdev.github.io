@@ -2,7 +2,7 @@ import * as React from 'react'
 import Badge from './Badge'
 import Button from './Button'
 
-const SideProjectCard = ({ title, url, badges, domain, children }) => {
+function SideProjectCard({ title, url, badges, domain, children }) {
     return (
         <div className="col">
             <div className="card" style={{ width: "18rem" }}> {/* TODO: Avoid inline style */}
