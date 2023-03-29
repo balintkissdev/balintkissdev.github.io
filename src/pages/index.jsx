@@ -89,8 +89,7 @@ const professionalExperience = [
     responsibilities: [
       `Developed microservices for a cloud-based medical imaging software
         within the Predix platform.`,
-      `Member of the division's "DevOps Guild", maintaining applications
-        deployed to the cloud environment.`
+      `Member of the division's "DevOps Guild", shared Docker best practices.`
     ]
   },
   {
@@ -181,13 +180,13 @@ function IndexPage() {
               >
                 <p>
                   Retro 3D graphics engine inspired by the one used in Wolfenstein
-                  3D.  Uses vector math to turn 2D maps into 3D space, includes
+                  3D. Uses vector math and CPU-based software rendering to turn 2D maps into 3D space, includes
                   double-buffering and texture mapping.
                 </p>
                 <p>
                   A <a href="https://balintkissdev.github.io/raycaster-engine/"
                   target="_blank" rel="noreferrer">browser-playable live
-                  demo</a> is available.
+                  demo</a> is compiled with Emscripten.
                 </p>
               </SideProjectCard>
 
@@ -228,7 +227,7 @@ function IndexPage() {
               <h2>Technical skills</h2>
               <TechSkillRow
                 title="Programming languages"
-                skills={["C++", "Go", "Python", "Bash", "Rust", "R"]}
+                skills={["C++", "Go", "Python", "Bash", "Java", "JavaScript", "R"]}
               />
               <TechSkillRow
                 title="C++-related technologies"
@@ -263,7 +262,7 @@ function IndexPage() {
               <TechSkillRow
                 title="Operating systems"
                 skills={
-                  ["Microsoft Windows", "Debian", "Ubuntu", "Red Hat", "Fedora"]
+                  ["Microsoft Windows", "Debian", "Ubuntu", "Red Hat", "Fedora", "Solaris"]
                 }
               />
               <TechSkillRow
@@ -306,20 +305,10 @@ function IndexPage() {
             <div className="mb-3">
               <h2>Other skills</h2>
               <ul>
+                <li>Mentoring</li>
+                <li>Software design skills, knowledge of Design Patterns, Anti-patterns and UML</li>
                 <li>Interest for new technologies, continous self-education</li>
-                <li>Quick learning, adapting to new environments and domains</li>
-                <li>Analytical approach, attention, precision</li>
                 <li>Presentation skills</li>
-                <li>Conducting interviews</li>
-              </ul>
-            </div>
-
-            <div className="mb-3">
-              <h2>Hobbies and interests</h2>
-              <ul>
-                <li>Playing the guitar for 14+ years, including playing in some music bands</li>
-                <li>Home studio mixing and mastering</li>
-                <li>Learning about game development</li>
               </ul>
             </div>
           </ResumeSection>
