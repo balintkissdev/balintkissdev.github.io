@@ -8,6 +8,8 @@ import Sidebar from '../components/Sidebar'
 import SideProjectCard from '../components/SideProjectCard'
 import TechSkillRow from '../components/TechSkillRow'
 
+import GitHubButton from 'react-github-btn'
+
 const professionalExperience = [
   {
     heading: "DMG MORI Heitec Digital Ltd.",
@@ -205,6 +207,9 @@ function IndexPage() {
                 url="https://github.com/balintkissdev/awesome-dos#readme"
               >
                 <p>
+                  <GitHubButton href="https://github.com/balintkissdev/awesome-dos" data-size="large" data-show-count="true" aria-label="Star balintkissdev/awesome-dos on GitHub">Star</GitHubButton>
+                </p>
+                <p>
                   Curated list of references for development of DOS applications
                   and learning about the system itself. The goal of this list is
                   to collect information and act as a starting point for someone
@@ -213,8 +218,7 @@ function IndexPage() {
                 <p>
                   This list is <a
                   href="https://twitter.com/awesome__re/status/1355813614469271555"
-                  target="_blank" rel="noreferrer">featured</a> on the official
-                  <a href="https://github.com/sindresorhus/awesome"
+                  target="_blank" rel="noreferrer">featured</a> on the official <a href="https://github.com/sindresorhus/awesome"
                   target="_blanK" rel="noreferrer">Awesome collection</a> made
                   by Sindre Sorhus.
                 </p>
