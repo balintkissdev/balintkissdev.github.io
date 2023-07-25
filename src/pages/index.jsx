@@ -131,12 +131,12 @@ function IndexPage() {
             </div>
             <h1 className="d-flex justify-content-center display-1 fw-bold mb-3">Balint<span class="text-muted">&nbsp;Kiss</span></h1>
             <p className="lead mb-5">
-              Passionate software developer with 6+ years of experience, providing
-              my talent in the field of cloud computing and IoT. I'm a software
-              technology enthusiast who keeps improving his skills and always
-              apply best practices and engineering principles when providing
-              technical solutions in order to solve the business needs of my
-              client.
+              Passionate software developer with a Master's degree in
+              Computer Science followed by {new Date().getFullYear() - 2017}+ years of
+              experience in the industry. I'm a software technology enthusiast who
+              keeps improving his skills and I always apply best practices and
+              engineering principles when providing technical solutions in order to
+              solve the business needs of my client.
             </p>
             <p className="lead mb-5">
               This site was created by me using <a href="https://reactjs.org/" target="_blank" rel="noreferrer">React</a> with <a href="https://www.gatsbyjs.com/" target="_blank" rel="noreferrer">GatsbyJS</a>.
@@ -196,7 +196,7 @@ function IndexPage() {
                 title="My resume website"
                 url="https://github.com/balintkissdev/balintkissdev.github.io"
                 domain="Web development"
-                badges={["React", "HTML", "CSS", "GatsbyJS", "Bootstrap 5"]}
+                badges={["React", "HTML", "CSS", "GatsbyJS"]}
               >
                 <a href="#top">This</a> mobile-first responsive site for my resume
                 to showcase my web development abilities.
@@ -248,7 +248,7 @@ function IndexPage() {
               <TechSkillRow
                 title="Web development"
                 skills={
-                  ["React", "JSX", "HTML5", "CSS", "Bootstrap 5"]
+                  ["HTML5", "CSS", "JavaScript", "React", "Tailwind CSS"]
                 }
               />
               <TechSkillRow
