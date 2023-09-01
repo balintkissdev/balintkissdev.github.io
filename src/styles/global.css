@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  @apply m-0 box-border p-0;
+}
+
+:root,
+body {
+  @apply flex flex-col;
+}
+
+html {
+  font-size: 16px;
+}
+h1 {
+  @apply text-2xl;
+}
+h2 {
+  @apply text-xl;
+}
+h3 {
+  @apply text-lg;
+}
+h4 {
+  font-size: 20px;
+}
+
+@media only screen and (min-width: 640px) {
+  html {
+    font-size: 18px;
+  }
+  h1 {
+    @apply text-4xl;
+  }
+  h2 {
+    @apply text-3xl;
+  }
+  h3 {
+    @apply text-2xl;
+  }
+  h4 {
+    @apply text-xl;
+  }
+}

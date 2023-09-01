@@ -4,6 +4,6 @@ https://balintkissdev.github.io
 
 Notable features:
 
-- Mobile-first responsive layout using [Bootstrap 5](https://getbootstrap.com/docs/5.0/) CSS framework
+- Mobile-first responsive layout using [Tailwind CSS](https://tailwindcss.com/) framework
 - Static site generation with [GatsbyJS](https://www.gatsbyjs.com/)
 - Automated deployment to GitHub Pages with GitHub Actions

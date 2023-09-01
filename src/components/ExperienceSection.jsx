@@ -1,57 +1,207 @@
-import * as React from 'react'
-import Badge from './Badge'
+import Badge from "./Badge";
+import ResumeSection from "./ResumeSection";
 
-function ExperienceSection({ experiences }) {
-    return (
-        <>
-            {
-                experiences.map((experience) => (
-                    <div className="container mb-3">
-                        <h2 className="mb-2">{experience.heading}</h2>
-                        {
-                            experience.roles.map((role) => (
-                                <div className="row mb-3">
-                                    <div className="col-sm-2 fw-bold">
-                                        {role.start} -<br />{role.end ? role.end : "Present"}
-                                    </div>
-                                    <div className="col">
-                                        <h3>{role.name}</h3>
-                                    </div>
-                                </div>
-                            ))
-                        }
-                        {
-                            experience.badges &&
-                            <div className="row">
-                                <div className="col-sm-2"></div>
-                                <div className="col-sm-8">
-                                    <p>
-                                        {
-                                            experience.badges.map((badge) => (
-                                                <Badge>{badge}</Badge>
-                                            ))
-                                        }
-                                    </p>
-                                </div>
-                            </div>
-                        }
-                        <div className="row">
-                            <div className="col-sm-2"></div>
-                            <div className="col-sm-8">
-                                <ul className="list-group list-group-flush">
-                                    {
-                                        experience.responsibilities.map((responsibility) => (
-                                            <li className="list-group-item">{responsibility}</li>
-                                        ))
-                                    }
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                ))
-            }
-        </>
-    )
+import * as React from "react";
+
+const professionalExperience = [
+  {
+    heading: "DMG MORI Heitec Digital Ltd.",
+    roles: [
+      {
+        name: "Senior Software Engineer",
+        start: "2022",
+      },
+      {
+        name: "Software Engineer",
+        start: "2020",
+        end: "2022",
+      },
+    ],
+    badges: [
+      "C++",
+      "Go",
+      "NATS",
+      "gRPC",
+      "OPC UA",
+      "MQTT",
+      "REST",
+      "OpenAPI",
+      "Google Protocol Buffers",
+      "Google Test",
+      "Google Mock",
+      "Microsoft Azure",
+      "Docker",
+    ],
+    responsibilities: [
+      `Developing Industry 4.0 cloud backend microservices for the CELOS Next
+      product.`,
+      `Forwarding PLC/NC machine data to various industrial communication protocol standards.`,
+      `Maintaining IoT Edge modules in the Microsoft Azure IoT Edge cloud platform.`,
+    ],
+    location: "Budapest",
+  },
+  {
+    heading: "Freelance Embedded Developer",
+    roles: [
+      {
+        name: "ME Embedded Ltd.",
+        start: "February 2019",
+        end: "June 2019",
+      },
+    ],
+    badges: ["C++", "Raspberry Pi", "Qt", "QML", "MQTT"],
+    responsibilities: [
+      `Developed embedded UI for a medical equipment's touch screen device.`,
+      `Forwarded machine state from serial I/O to an IoT server.`,
+    ],
+  },
+  {
+    heading: "evosoft Hungary Ltd.",
+    roles: [
+      {
+        name: "Senior Software Engineer",
+        start: "2018",
+        end: "2020",
+      },
+      {
+        name: "Software Engineer",
+        start: "2017",
+        end: "2018",
+      },
+      {
+        name: "Junior Software Engineer",
+        start: "January 2017",
+        end: "November 2017",
+      },
+    ],
+    badges: [
+      "C++",
+      "Qt",
+      "Google Test",
+      "Google Mock",
+      "Win32 API",
+      "Python",
+      "Bash",
+      "Perl",
+      "Tcl",
+    ],
+    responsibilities: [
+      `Developed product- and test code to multiple in-house software products
+      for the Siemens SINUMERIK system platform in the field of industrial
+      automation.`,
+      `Refactored legacy testing framework to BDD tests, reducing test
+      maintenance effort by 70%.`,
+      `Took responsibility in improving the workflow processes and introduced tools to the team.`,
+      `Maintained in-house tooling and automation scripts.`,
+    ],
+    location: "Budapest",
+  },
+  {
+    heading: "GE Healthcare",
+    roles: [
+      {
+        name: "Software Intern",
+        start: "2015",
+        end: "2016",
+      },
+    ],
+    badges: [
+      "Java",
+      "Spring Boot",
+      "REST",
+      "RabbitMQ",
+      "Redis",
+      "Cloud Foundry",
+      "Docker",
+      "JUnit",
+      "Mockito",
+      "JBehave",
+      "Selenium",
+    ],
+    responsibilities: [
+      `Developed microservices for a cloud-based medical imaging software
+        within the Predix platform.`,
+      `Member of the division's "DevOps Guild", shared Docker best practices.`,
+    ],
+    location: "Budapest",
+  },
+  {
+    heading: "University of West Hungary",
+    roles: [
+      {
+        name: "Research Software Developer",
+        start: "2013",
+        end: "2015",
+      },
+    ],
+    badges: [
+      "Java",
+      "R",
+      "RapidMiner",
+      "Apache Tomcat",
+      "MongoDB",
+      "VMware ESXi",
+    ],
+    responsibilities: [
+      `Developed a multivariate regression analytic plugin for our data analytic
+      framework used in the 25294/207 TÁMOP-4.2.2.C-11/1/KONV-2012-0015 Earth-system
+      research project.`,
+      `Presented my research work on multiple conferences and was co-author in
+      the publications.`,
+      `Administered a virtual web server running in the cloud, supporting
+      multiple members of the research project.`,
+    ],
+    location: "Sopron",
+  },
+];
+
+export default function ExperienceSection() {
+  return (
+    <ResumeSection id="experience" title="Professional experience">
+      {professionalExperience.map((experience) => (
+        <div className="border-solid rounded-lg border-2 p-4 mb-8">
+          <h3 className="">{experience.heading}</h3>
+          <div className="col-span-2 text-gray-500 mb-2">{experience.location}</div>
+          <div className="flex flex-col sm:grid grid-cols-12 gap-2 sm:gap-4">
+            {experience.roles.map((role) => (
+              <>
+                {/* TODO: Code duplication */}
+                <div className="hidden sm:block pt-1 col-span-2 font-bold">
+                  {role.start} - {role.end ? role.end : "Present"}
+                </div>
+                <div className="col-span-10">
+                  <h4>{role.name}</h4>
+                </div>
+                <div className="block sm:hidden pt-1 col-span-2 font-bold">
+                  {role.start} - {role.end ? role.end : "Present"}
+                </div>
+              </>
+            ))}
+            <div className="col-span-10">
+              <div></div>
+              <div>
+                <ul className="flex flex-col divide-y">
+                  {experience.responsibilities.map((responsibility) => (
+                    <li className="p-2">{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+            <div className="col-span-2"></div>
+            {experience.badges && (
+              <div className="col-span-10">
+                <div>
+                  <p>
+                    {experience.badges.map((badge) => (
+                      <Badge>{badge}</Badge>
+                    ))}
+                  </p>
+                </div>
+              </div>
+            )}
+          </div>
+        </div>
+      ))}
+    </ResumeSection>
+  );
 }
-
-export default ExperienceSection

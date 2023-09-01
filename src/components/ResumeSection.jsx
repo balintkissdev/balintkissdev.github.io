@@ -1,20 +1,18 @@
-import * as React from 'react'
-import {
-    resumeSection
-} from './ResumeSection.module.css'
+import * as React from "react";
 
-function ResumeSection({ id, title, children }) {
-    return (
-        <>
-            <section id={id} className={`${resumeSection} p-3 p-lg-5 d-flex align-items-center`}>
-                <div class="w-100">
-                    {title && <h1 class="mb-3 display-4">{title}</h1>}
-                    {children}
-                </div>
-            </section>
-            <hr className="m-0" />
-        </>
-    )
+export default function ResumeSection({ id, title, children }) {
+  return (
+    <>
+      <section
+        id={id}
+        className="max-w-6xl flex p-8 sm:p-12 items-center"
+      >
+        <div class="w-full">
+          {title && <h2 className="mb-3">{title}</h2>}
+          {children}
+        </div>
+      </section>
+      <hr className="m-0" />
+    </>
+  );
 }
-
-export default ResumeSection

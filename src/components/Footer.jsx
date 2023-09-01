@@ -1,11 +1,9 @@
 import * as React from 'react'
 
-function Footer() {
+export default function Footer() {
     return (
-        <footer className={`d-flex align-items-center justify-content-center`}>
-            <span className="py-3 text-muted">&copy; {new Date().getFullYear()} Balint Kiss</span>
+        <footer className="flex justify-center py-4 text-gray-500">
+            <p>&copy; {new Date().getFullYear()} Balint Kiss</p>
         </footer>
     )
 }
-
-export default Footer

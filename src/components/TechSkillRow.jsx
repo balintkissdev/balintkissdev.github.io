@@ -1,20 +1,14 @@
-import * as React from 'react'
-import Badge from './Badge'
+import Badge from "./Badge";
 
-function TechSkillRow({ title, skills }) {
-    return (
-        <div class="row">
-            <div class="col-sm-3 fw-bold">
-                {title}
-            </div>
-            <div class="col-sm-8">
-                {
-                    Badge.makeBadges(skills)
-                }
-            </div>
-            <hr className="my-1" />
-        </div>
-    )
+import * as React from "react";
+
+export default function TechSkillRow({ title, skills }) {
+  return (
+    <div className="flex flex-col sm:flex-row py-2">
+      <div className="sm:flex-grow-0 sm:flex-shrink-0 sm:w-[25%] font-bold">{title}</div>
+      <div className="sm:flex-grow-0 sm:flex-shrink-0 sm:w-[66.66666667%]">
+        {Badge.makeBadges(skills)}
+      </div>
+    </div>
+  );
 }
-
-export default TechSkillRow
