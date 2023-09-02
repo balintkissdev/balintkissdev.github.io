@@ -1,5 +1,6 @@
 import { StaticImage } from "gatsby-plugin-image";
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
+import { Link, animateScroll} from "react-scroll"
 
 import React, { useState } from "react";
 
@@ -88,12 +89,15 @@ export default function Sidebar() {
         {sideBarLinks.map((link) => {
           return (
             <li className="my-8" key={link.href}>
-              <a
-                className="transition ease-in-out hover:text-[burlywood] duration-300" href={`#${link.href}`}
+              <Link
+                to={link.href}
+                smooth={true}
+                duration={500}
+                className="transition ease-in-out hover:text-[burlywood] duration-300"
                 onClick={() => setOpen(false)}
               >
                 {link.name}
-              </a>
+              </Link>
             </li>
           );
         })}

@@ -46,3 +46,7 @@ h4 {
     @apply text-xl;
   }
 }
+
+a {
+  @apply cursor-pointer
+}
