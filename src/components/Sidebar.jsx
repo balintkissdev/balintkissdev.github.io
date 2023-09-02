@@ -64,15 +64,18 @@ export default function Sidebar() {
         ${isOpen ? "translate-x0" : "-translate-x-96 lg:translate-x-0"}
       `}>
       <div className="flex justify-center">
-        <a
-          href="#top"
-          className="transition ease-in-out hover:brightness-110 duration-300"
-        >
-          <StaticImage
-            className="hidden lg:inline-block rounded-full"
-            src="../images/cv_profile.jpg"
-          />
-        </a>
+        {/* HACK: gatsby-image-wrapper overrides with "inline-block" */}
+        <div className="hidden lg:inline-block">
+          <a
+            href="#top"
+            className="transition ease-in-out hover:brightness-110 duration-300"
+          >
+            <StaticImage
+              className="rounded-full"
+              src="../images/cv_profile.jpg"
+            />
+          </a>
+        </div>
       </div>
       <div className="flex justify-center pt-4 gap-4">
         <SocialIcon href="https://linkedin.com/in/balintkissdev">
