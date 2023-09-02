@@ -7,7 +7,7 @@ export default function SideProjectCard({ title, url, badges, domain, children }
     return (
         <div className="p-4 border-solid rounded-lg border-2 lg:w-80">
             <div>
-                <Button href={url}>
+                <Button href={url} className="w-full">
                     {title}
                 </Button>
                 <div><i className="fab fa-github fa-xl"></i></div>
