@@ -1,0 +1,18 @@
+---
+const { href, classNames } = Astro.props; // TODO: classNames is not the Astro way
+---
+
+<a
+  class={`
+        inline-block p-2 mb-3
+        no-underline text-[whitesmoke] bg-[rgb(122,113,113)]
+        text-center font-bold
+        hover:brightness-110 duration-300
+        ${classNames}
+      `}
+  href={href}
+  target="_blank"
+  rel="noreferrer"
+>
+  <slot />
+</a>

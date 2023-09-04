@@ -1,0 +1,10 @@
+---
+const { classNames } = Astro.props; // TODO: Not the Astro way
+---
+
+<span
+  class={`inline-block m-1 px-2 py-1 bg-[rgb(122,113,113)] rounded-xl
+        text-[whitesmoke] font-bold ${classNames}`}
+>
+  <slot />
+</span>

@@ -1,36 +1,33 @@
 {
-  "name": "balint-kiss-resume",
+  "name": "balintkissdev.github.io",
   "version": "1.0.0",
   "private": true,
-  "description": "balint-kiss-resume",
-  "author": "balintkissdev",
-  "keywords": [
-    "gatsby"
-  ],
+  "description": "My professional website created by me using [React](https://reactjs.org/).",
+  "main": "index.js",
   "scripts": {
-    "dev": "gatsby develop",
-    "start": "gatsby develop",
-    "build": "gatsby build",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "deploy": "gatsby build && gh-pages -d public -b main"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
   },
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "gatsby": "^5.11.0",
-    "gatsby-plugin-image": "^3.11.0",
-    "gatsby-plugin-sharp": "^5.11.0",
-    "gatsby-source-filesystem": "^5.11.0",
+    "@astrojs/react": "^3.0.0",
+    "@astrojs/tailwind": "^5.0.0",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "astro": "^3.0.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-github-btn": "^1.4.0",
     "react-icons": "^4.10.1",
-    "react-scroll": "^1.8.9"
+    "react-scroll": "^1.8.9",
+    "tailwindcss": "^3.3.3"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.14",
-    "gatsby-plugin-postcss": "^6.11.0",
-    "gh-pages": "^4.0.0",
-    "postcss": "^8.4.24",
-    "tailwindcss": "^3.3.2"
+    "@types/react-scroll": "^1.8.7",
+    "autoprefixer": "^10.4.15",
+    "postcss": "^8.4.29"
   }
 }

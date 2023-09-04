@@ -1,0 +1,26 @@
+---
+import Sidebar from "../components/Sidebar.jsx";
+import Footer from "../components/Footer.astro";
+import "../styles/global.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Balint Kiss</title>
+  </head>
+  <body>
+    <div>
+      <Sidebar client:only="react" />
+      <div>
+        <main class="pt-0 lg:pl-72 h-full flex items-center justify-center">
+          <div class="p-0">
+            <slot />
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </div>
+  </body>
+</html>
