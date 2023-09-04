@@ -1,7 +1,6 @@
-import Badge from "./Badge";
-import ResumeSection from "./ResumeSection";
-
-import * as React from "react";
+---
+import ResumeSection from "./ResumeSection.astro";
+import Badge from "./Badge.astro";
 
 const professionalExperience = [
   {
@@ -154,54 +153,53 @@ const professionalExperience = [
     location: "Sopron",
   },
 ];
+---
 
-export default function ExperienceSection() {
-  return (
-    <ResumeSection id="experience" title="Professional experience">
-      {professionalExperience.map((experience) => (
-        <div className="border-solid rounded-lg border-2 p-4 mb-8">
-          <h3 className="">{experience.heading}</h3>
-          <div className="col-span-2 text-gray-500 mb-2">{experience.location}</div>
-          <div className="flex flex-col sm:grid grid-cols-12 gap-2 sm:gap-4">
-            {experience.roles.map((role) => (
-              <>
-                {/* TODO: Code duplication */}
-                <div className="hidden sm:block pt-1 col-span-2 font-bold">
-                  {role.start} - {role.end ? role.end : "Present"}
-                </div>
-                <div className="col-span-10">
-                  <h4>{role.name}</h4>
-                </div>
-                <div className="block sm:hidden pt-1 col-span-2 font-bold">
-                  {role.start} - {role.end ? role.end : "Present"}
-                </div>
-              </>
-            ))}
-            <div className="col-span-10">
-              <div></div>
+<ResumeSection id="experience" title="Professional experience">
+  {
+    professionalExperience.map((experience) => (
+      <div class="border-solid rounded-lg border-2 p-4 mb-8">
+        <h3 class="">{experience.heading}</h3>
+        <div class="col-span-2 text-gray-500 mb-2">{experience.location}</div>
+        <div class="flex flex-col sm:grid grid-cols-12 gap-2 sm:gap-4">
+          {experience.roles.map((role) => (
+            <>
+              {/* TODO: Code duplication */}
+              <div class="hidden sm:block pt-1 col-span-2 font-bold">
+                {role.start} - {role.end ? role.end : "Present"}
+              </div>
+              <div class="col-span-10">
+                <h4>{role.name}</h4>
+              </div>
+              <div class="block sm:hidden pt-1 col-span-2 font-bold">
+                {role.start} - {role.end ? role.end : "Present"}
+              </div>
+            </>
+          ))}
+          <div class="col-span-10">
+            <div />
+            <div>
+              <ul class="flex flex-col divide-y">
+                {experience.responsibilities.map((responsibility) => (
+                  <li class="p-2">{responsibility}</li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          <div class="col-span-2" />
+          {experience.badges && (
+            <div class="col-span-10">
               <div>
-                <ul className="flex flex-col divide-y">
-                  {experience.responsibilities.map((responsibility) => (
-                    <li className="p-2">{responsibility}</li>
+                <p>
+                  {experience.badges.map((badge) => (
+                    <Badge>{badge}</Badge>
                   ))}
-                </ul>
+                </p>
               </div>
             </div>
-            <div className="col-span-2"></div>
-            {experience.badges && (
-              <div className="col-span-10">
-                <div>
-                  <p>
-                    {experience.badges.map((badge) => (
-                      <Badge>{badge}</Badge>
-                    ))}
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+          )}
         </div>
-      ))}
-    </ResumeSection>
-  );
-}
+      </div>
+    ))
+  }
+</ResumeSection>

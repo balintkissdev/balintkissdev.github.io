@@ -1,0 +1,36 @@
+---
+import ResumeSection from "./ResumeSection.astro";
+import { Image } from "astro:assets";
+import profile from "../assets/cv_profile.jpg";
+---
+
+<ResumeSection id="about">
+  <div
+    class="w-full min-h-screen flex flex-col items-center lg:mt-64 lg:gap-16"
+  >
+      <Image
+        class="inline-block lg:hidden rounded-full w-40 h-40 md:w-80 md:h-80"
+        src={profile}
+        alt="Profile picture of Bálint Kiss in blue shirt behind a houseplant"
+      />
+    <h1 class="text-center font-bold">
+      Balint<span class="text-gray-500">&nbsp;Kiss</span>
+    </h1>
+    <div
+      class="flex flex-col items-stretch gap-4 lg:gap-8 md:text-lg text-justify"
+    >
+      <p>
+        Passionate software developer with a Master's degree in Computer Science
+        followed by {new Date().getFullYear() - 2017}+ years of experience in
+        the industry. I'm a software technology enthusiast who keeps improving
+        his skills and I always apply best practices and engineering principles
+        when providing technical solutions in order to solve the business needs
+        of my client.
+      </p>
+      <p>
+        This site was created by me using <i>React</i>,
+        <i>Tailwind CSS</i> and <i>Astro</i>.
+      </p>
+    </div>
+  </div>
+</ResumeSection>
