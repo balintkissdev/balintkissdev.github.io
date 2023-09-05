@@ -1,9 +1,10 @@
-My professional website created by me using [React](https://reactjs.org/).
+My professional website created by me.
 
-https://balintkissdev.github.io
+https://www.balintkissdev.com
 
 Notable features:
 
 - Mobile-first responsive layout using [Tailwind CSS](https://tailwindcss.com/) framework
-- Static site generation with [GatsbyJS](https://www.gatsbyjs.com/)
+- Static site generation with [Astro](https://astro.build/)
+- Components created with [React](https://react.dev/)
 - Automated deployment to GitHub Pages with GitHub Actions
