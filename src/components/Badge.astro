@@ -1,10 +1,12 @@
 ---
-const { classNames } = Astro.props; // TODO: Not the Astro way
+const { bg } = Astro.props;
 ---
 
 <span
-  class={`inline-block m-1 px-2 py-1 bg-[rgb(122,113,113)] rounded-xl
-        text-[whitesmoke] font-bold ${classNames}`}
+  class:list={[
+    "inline-block m-1 px-2 py-1 rounded-xl text-[whitesmoke] font-bold",
+    bg || "bg-[rgb(122,113,113)]",
+  ]}
 >
   <slot />
 </span>

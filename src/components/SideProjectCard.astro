@@ -20,7 +20,7 @@ const { title, url, badges, domain } = Astro.props;
     (domain || badges) && (
       <div>
         <p>
-          {domain && <Badge classNames="bg-[#702963]">{domain}</Badge>}
+          {domain && <Badge bg="bg-[#702963]">{domain}</Badge>}
           {badges && badges.map((badge) => <Badge>{badge}</Badge>)}
         </p>
       </div>
