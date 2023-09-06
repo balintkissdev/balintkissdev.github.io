@@ -1,7 +1,6 @@
 import SocialIcon from "./SocialIcon.jsx"
 import profile from "../assets/cv_profile.jpg";
 
-import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
 import { Link, animateScroll } from "react-scroll";
 
 import React, { useState } from "react";
@@ -68,13 +67,13 @@ export default function Sidebar() {
           </div>
           <div className="flex justify-center gap-4">
             <SocialIcon href="https://linkedin.com/in/balintkissdev">
-            <FaLinkedin size={26} />
+              <i className="fa-brands fa-linkedin"></i>
             </SocialIcon>
             <SocialIcon href="https://github.com/balintkissdev">
-              <FaGithub size={26} />
+              <i className="fa-brands fa-github"></i>
             </SocialIcon>
             <SocialIcon href="mailto:balintkissdev@gmail.com">
-              <FaEnvelope size={26} />
+              <i className="fa-solid fa-envelope"></i>
             </SocialIcon>
           </div>
         </div>

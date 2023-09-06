@@ -6,7 +6,7 @@ export default function SocialIcon({ href, children }) {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="w-14 p-4 bg-[whitesmoke] rounded-full justify-center text-[#383838] transition ease-in-out hover:bg-[burlywood] duration-300"
+      className="inline-block w-14 py-4 bg-[whitesmoke] rounded-full text-[#383838] text-center fa-xl transition ease-in-out hover:bg-[burlywood] duration-300"
     >
       {children}
     </a>

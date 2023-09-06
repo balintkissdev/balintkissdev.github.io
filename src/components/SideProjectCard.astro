@@ -2,22 +2,18 @@
 import Button from "./Button.astro";
 import Badge from "./Badge.astro";
 
-import { FaGithub } from "react-icons/fa";
-
 const { title, url, badges, domain } = Astro.props;
 ---
 
 <div class="p-4 border-solid rounded-lg border-2 lg:w-80">
   {
     title && (
-      <div>
-        <Button href={url} classNames="w-full">
-          <div class="flex flex-col items-center gap-1">
-            <FaGithub size={26} client:only="react" />
-            {title}
-          </div>
-        </Button>
-      </div>
+      <Button href={url} classNames="w-full">
+        <div class="flex flex-col items-center">
+          <i class="p-4 fa-brands fa-github fa-xl" />
+          <p>{title}</p>
+        </div>
+      </Button>
     )
   }
   {

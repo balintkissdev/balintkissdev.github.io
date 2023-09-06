@@ -12,7 +12,7 @@ import "../styles/global.css";
   </head>
   <body>
     <div>
-      <Sidebar client:only="react" />
+      <Sidebar client:load /> <!-- Use client:load because of react-scroll -->
       <div>
         <main class="pt-0 lg:pl-72 h-full flex items-center justify-center">
           <div class="p-0">
