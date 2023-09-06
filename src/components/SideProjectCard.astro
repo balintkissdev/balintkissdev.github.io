@@ -2,20 +2,23 @@
 import Button from "./Button.astro";
 import Badge from "./Badge.astro";
 
+interface Props {
+  title: string;
+  url: string;
+  badges?: string[];
+  domain?: string;
+}
+
 const { title, url, badges, domain } = Astro.props;
 ---
 
 <div class="p-4 border-solid rounded-lg border-2 lg:w-80">
-  {
-    title && (
-      <Button href={url} classNames="w-full">
-        <div class="flex flex-col items-center">
-          <i class="p-4 fa-brands fa-github fa-xl" />
-          <p>{title}</p>
-        </div>
-      </Button>
-    )
-  }
+  <Button href={url} classNames="w-full">
+    <div class="flex flex-col items-center">
+      <i class="p-4 fa-brands fa-github fa-xl"></i>
+      <p>{title}</p>
+    </div>
+  </Button>
   {
     (domain || badges) && (
       <div>

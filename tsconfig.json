@@ -1,3 +1,14 @@
 {
-  "extends": "astro/tsconfigs/base"
+  "compilerOptions": {
+    "jsx": "react",
+    "module": "esnext",
+    "strict": true,
+    "target": "es5",
+  },
+  "extends": "astro/tsconfigs/base",
+  "include": [
+    "./src/**/*.astro",
+    "./src/**/*.tsx",
+    "./src/**/*.ts"
+  ]
 }

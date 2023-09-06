@@ -1,11 +1,15 @@
 ---
-const { bg } = Astro.props;
+interface Props {
+  bg?: string;
+}
+
+const { bg = "bg-[rgb(122,113,113)]" } = Astro.props;
 ---
 
 <span
   class:list={[
     "inline-block m-1 px-2 py-1 rounded-xl text-[whitesmoke] font-bold",
-    bg || "bg-[rgb(122,113,113)]",
+    bg,
   ]}
 >
   <slot />

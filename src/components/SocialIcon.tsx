@@ -1,6 +1,11 @@
 import * as React from "react";
 
-export default function SocialIcon({ href, children }) {
+interface Props {
+  href: string;
+  children: React.ReactNode;
+}
+
+const SocialIcon: React.FC<Props> = ({ href, children }) => {
   return (
     <a
       href={href}
@@ -11,4 +16,6 @@ export default function SocialIcon({ href, children }) {
       {children}
     </a>
   );
-}
+};
+
+export default SocialIcon;

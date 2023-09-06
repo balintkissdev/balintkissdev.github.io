@@ -2,7 +2,21 @@
 import ResumeSection from "./ResumeSection.astro";
 import Badge from "./Badge.astro";
 
-const professionalExperience = [
+interface Role {
+  name: string;
+  start: string;
+  end?: string;
+}
+
+interface Experience {
+  heading: string;
+  roles: Role[];
+  badges: string[];
+  responsibilities: string[];
+  location?: string;
+}
+
+const professionalExperience: Experience[] = [
   {
     heading: "DMG MORI Heitec Digital Ltd.",
     roles: [
