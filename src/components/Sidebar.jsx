@@ -1,3 +1,4 @@
+import SocialIcon from "./SocialIcon.jsx"
 import profile from "../assets/cv_profile.jpg";
 
 import { FaEnvelope, FaGithub, FaLinkedin } from "react-icons/fa";
@@ -13,19 +14,6 @@ const sideBarLinks = [
   { name: "Skills", href: "skills" },
   { name: "Academic achievements", href: "achievements" },
 ];
-
-function SocialIcon({ href, children }) {
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noreferrer"
-      className="w-14 p-4 bg-[whitesmoke] rounded-full justify-center text-[#383838] transition ease-in-out hover:bg-[burlywood] duration-300"
-    >
-      {children}
-    </a>
-  );
-}
 
 export default function Sidebar() {
   const hamburgerLine =
@@ -80,7 +68,7 @@ export default function Sidebar() {
           </div>
           <div className="flex justify-center gap-4">
             <SocialIcon href="https://linkedin.com/in/balintkissdev">
-              <FaLinkedin size={26} />
+            <FaLinkedin size={26} />
             </SocialIcon>
             <SocialIcon href="https://github.com/balintkissdev">
               <FaGithub size={26} />
