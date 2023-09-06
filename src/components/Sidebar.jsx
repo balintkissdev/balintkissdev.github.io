@@ -64,13 +64,13 @@ export default function Sidebar() {
       </button>
       <nav
         className={`
-        fixed lg:flex flex-col justify-center max-w-screen-sm lg:max-w-[16rem]
-        h-full bg-[#383837] text-[whitesmoke] px-6 gap-8 transition lg:transition-none duration-200 ease-in z-10
+        fixed lg:flex flex-col items-center justify-start max-w-screen-sm lg:max-w-[16rem]
+        h-full bg-[#383837] text-[whitesmoke] px-6 transition lg:transition-none duration-200 ease-in z-10
         ${isOpen ? "translate-x0" : "-translate-x-96 lg:translate-x-0"}
       `}
       >
-        <div className="flex justify-center">
-          <div className="hidden lg:inline-block">
+        <div className="py-8">
+          <div className="hidden lg:flex justify-center pb-4">
             <a
               href="#top"
               className="transition ease-in-out hover:brightness-110 duration-300"
@@ -78,22 +78,22 @@ export default function Sidebar() {
               <img className="rounded-full" src={profile.src} />
             </a>
           </div>
+          <div className="flex justify-center gap-4">
+            <SocialIcon href="https://linkedin.com/in/balintkissdev">
+              <FaLinkedin size={26} />
+            </SocialIcon>
+            <SocialIcon href="https://github.com/balintkissdev">
+              <FaGithub size={26} />
+            </SocialIcon>
+            <SocialIcon href="mailto:balintkissdev@gmail.com">
+              <FaEnvelope size={26} />
+            </SocialIcon>
+          </div>
         </div>
-        <div className="flex justify-center pt-4 gap-4">
-          <SocialIcon href="https://linkedin.com/in/balintkissdev">
-            <FaLinkedin size={26} />
-          </SocialIcon>
-          <SocialIcon href="https://github.com/balintkissdev">
-            <FaGithub size={26} />
-          </SocialIcon>
-          <SocialIcon href="mailto:balintkissdev@gmail.com">
-            <FaEnvelope size={26} />
-          </SocialIcon>
-        </div>
-        <ul className="mx-2 uppercase font-bold tracking-wider">
+        <ul className="flex flex-col mx-2 gap-4 uppercase font-bold tracking-wider">
           {sideBarLinks.map((link) => {
             return (
-              <li className="my-8" key={link.href}>
+              <li key={link.href}>
                 <Link
                   to={link.href}
                   smooth={true}
