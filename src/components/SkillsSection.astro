@@ -17,16 +17,22 @@ import TechSkillRow from "./TechSkillRow.astro";
         skills={[
           "CMake",
           "Make",
+          "Clang Tooling",
           "Qt",
           "QML",
           "Boost",
           "Google Test",
-          "Clang Tools",
+          "Google Mock",
+          "libopenssl",
         ]}
       />
       <TechSkillRow
-        title="Cloud computing"
+        title="Cloud"
         skills={["Microsoft Azure", "Azure IoT Edge", "Cloud Foundry"]}
+      />
+      <TechSkillRow
+        title="Backend"
+        skills={["RabbitMQ", "MQTT", "NATS", "REST", "OpenAPI", "gRPC"]}
       />
       <TechSkillRow
         title="Web development"
@@ -54,7 +60,7 @@ import TechSkillRow from "./TechSkillRow.astro";
       />
       <TechSkillRow
         title="Editors and IDEs"
-        skills={["Vim", "Visual Studio Code", "Visual Studio", "Qt Creator"]}
+        skills={["Neovim", "Visual Studio Code", "Visual Studio", "Qt Creator"]}
       />
       <TechSkillRow
         title="Other"
@@ -85,10 +91,11 @@ import TechSkillRow from "./TechSkillRow.astro";
   <div class="mb-2">
     <h3>Other skills</h3>
     <ul class="ml-4 list-disc list-inside">
-      <li>Mentoring</li>
-      <li>Software design skills, knowledge of Design Patterns, Anti-patterns and UML</li>
+      <li>Growth mindset</li>
+      <li>Conducting interviews, mentoring, knowledge sharing</li>
+      <li>Software design skills, knowledge of Design Patterns, Anti-patterns, API design</li>
       <li>Interest for new technologies, continous self-education</li>
-      <li>Presentation skills</li>
+      <li>Presenting to customers</li>
     </ul>
   </div>
 </ResumeSection>
