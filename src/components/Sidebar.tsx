@@ -1,8 +1,6 @@
 import SocialIcon from "./SocialIcon.tsx";
 import profile from "../assets/cv_profile.jpg";
 
-import { Link, animateScroll } from "react-scroll";
-
 import * as React from "react";
 
 interface SideBarLink {
@@ -11,12 +9,8 @@ interface SideBarLink {
 }
 
 const sideBarLinks: SideBarLink[] = [
-  { name: "About", href: "about" },
-  { name: "Experience", href: "experience" },
-  { name: "Education", href: "education" },
-  { name: "Side projects", href: "projects" },
-  { name: "Skills", href: "skills" },
-  { name: "Academic achievements", href: "achievements" },
+  { name: "Home, sweet home", href: "/" },
+  { name: "Resume", href: "/resume" },
 ];
 
 interface SidebarState {
@@ -100,15 +94,13 @@ class Sidebar extends React.Component<{}, SidebarState> {
             {sideBarLinks.map((link) => {
               return (
                 <li key={link.href}>
-                  <Link
-                    to={link.href}
-                    smooth={true}
-                    duration={500}
+                  <a
+                    href={link.href}
                     className="transition ease-in-out hover:text-[burlywood] duration-300"
                     onClick={() => this.setState({ opened: false })}
                   >
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               );
             })}
@@ -120,3 +112,4 @@ class Sidebar extends React.Component<{}, SidebarState> {
 }
 
 export default Sidebar;
+

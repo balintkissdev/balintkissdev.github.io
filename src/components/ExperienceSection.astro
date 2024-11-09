@@ -6,13 +6,13 @@ interface Role {
   name: string;
   start: string;
   end?: string;
+  responsibilities: string[];
 }
 
 interface Experience {
   heading: string;
   roles: Role[];
   badges: string[];
-  responsibilities: string[];
   location?: string;
 }
 
@@ -22,12 +22,14 @@ const professionalExperience: Experience[] = [
     roles: [
       {
         name: "Senior Software Engineer",
-        start: "2022",
-      },
-      {
-        name: "Software Engineer",
         start: "2020",
-        end: "2022",
+        responsibilities: [
+          `Bringing expertise to CELOS X, an Industry 4.0 SaaS cloud solution on Microsoft Azure providing digitization of CNC machines.`,
+          `Leading technical decisions for large-scale C++ and Go backend services, utilizing stream processing to transform multi-vendor CNC machine data and transmitting them with publish-subscribe messaging.`,
+          `Integrating CELOS X with a diverse set of industrial communication protocols (OPC UA, MTConnect, MQTT) to ensure seamless connectitvity with various business client systems, becoming a domain specialist in them.`,
+          `Resolved a critical dependency risk affecting whole system architecture that was discovered before release, utilizing cross-team collaboration and coordination during mitigation.`,
+          `Playing a pivotal role in talent acquisition and fostering skill growth among developers. Conducting over 15 interviews and assisting onboarding through architecture documentation and a comprehensive onboarding guide.`
+        ],
       },
     ],
     badges: [
@@ -45,26 +47,21 @@ const professionalExperience: Experience[] = [
       "Microsoft Azure",
       "Docker",
     ],
-    responsibilities: [
-	  `Maintaining Industry 4.0 cloud backend services in C++ and Go for the CELOS X SaaS product, utilizing Microsoft Azure IoT Edge and Publish-Subscribe messaging (NATS).`,
-	  `Delivering feature components that forward raw PLC/NC machine data (Siemens, Heidenhain, MAPPS) to client systems relying on various industrial communication methods (OPC-UA, MTConnect, MQTT).`,
-	  `Conducting interviews, onboarding support for new colleagues, mentoring, wiki maintenance`
-    ],
     location: "Budapest",
   },
   {
-    heading: "Freelance Embedded Developer",
+    heading: "Freelance Embedded Software Developer",
     roles: [
       {
         name: "ME Embedded Ltd.",
         start: "February 2019",
         end: "June 2019",
+        responsibilities: [
+          `Independently developed an embedded C++ Qt/QML application for a medical device's Raspberry Pi touchscreen interface. The system controlled a robot arm via GPIO serial port, processed received medical analysis results, and forwarded data to an MQTT messaging broker, enabling real-time push notifications on mobile devices.`
+        ],
       },
     ],
     badges: ["C++", "Raspberry Pi", "Qt", "QML", "MQTT"],
-    responsibilities: [
-      `Delivered an embedded Qt/QML UI application for a medical equipment's Raspberry Pi touch screen device while also forwarding machine state with UART to an MQTT messaging server.`
-    ],
   },
   {
     heading: "evosoft Hungary Ltd.",
@@ -73,16 +70,29 @@ const professionalExperience: Experience[] = [
         name: "Senior Software Engineer",
         start: "2018",
         end: "2020",
+        responsibilities: [
+          `Architected a complex diagnostic data analytic C++ Qt application with a plugin system, utilizing additional Win32 system programming techniques (Debugging API). This software currently aids Siemens SINUMERIK engineers to fix bugs reported by customers in less time.`,
+          `Authored extensive software architecture documentation following the arc42 standard.`,
+          `Conducted modern C++ and software design training sessions, sharing knowledge and elevating team expertise.`,
+        ],
       },
       {
         name: "Software Engineer",
         start: "2017",
         end: "2018",
+        responsibilities: [
+          `Successfully refactored an outdated Perl testing framework into Python BDD tests, reducing test code maintenance efforts and improved sprint velocity by 40%.`,
+          `Introduced development best practices and modern tooling to optimize work processes.`,
+        ],
       },
       {
         name: "Junior Software Engineer",
         start: "January 2017",
         end: "November 2017",
+        responsibilities: [
+          `Developed and delivered diagnostic data collection functionality in C++ for the Siemens SINUMERIK CNC controller, a feature still actively used in factories today.`,
+          `Maintained and improved internal tooling and automation scripts in Bash and Python.`
+        ],
       },
     ],
     badges: [
@@ -96,16 +106,6 @@ const professionalExperience: Experience[] = [
       "Perl",
       "Tcl",
     ],
-    responsibilities: [
-      `Delivered embedded diagnostics functionality for the Siemens SINUMERIK
-      CNC controller in C++14, along with designing and implementing an
-      analytic desktop Qt application to improve the debugging work of Siemens
-      engineers. Designed plugin architecture for the analytic application.`,
-      `Refactored legacy testing framework to BDD tests, reducing test
-      maintenance effort by 70%.`,
-      `Took responsibility in improving the workflow processes and introduced tools to the team.`,
-      `Maintained in-house tooling and automation scripts.`,
-    ],
     location: "Budapest",
   },
   {
@@ -115,6 +115,11 @@ const professionalExperience: Experience[] = [
         name: "Software Intern",
         start: "2015",
         end: "2016",
+        responsibilities: [
+          `Maintained cloud backend microservices in Java using Spring Framework for a medical imaging SaaS cloud product within the Predix platform, working with DICOM medical protocol in the process.`,
+          `BDD test automation using Selenium.`,
+          `Actively contributed to the division's "DevOps Guild", promoting Docker best practices.`,
+        ],
       },
     ],
     badges: [
@@ -130,21 +135,20 @@ const professionalExperience: Experience[] = [
       "JBehave",
       "Selenium",
     ],
-    responsibilities: [
-      `Maintained cloud backend microservices in Java using Spring Framework
-      for a medical imaging SaaS product within the Predix platform, working
-        with DICOM medical protocol in the process.`,
-      `Member of the division's "DevOps Guild", shared Docker best practices.`,
-    ],
     location: "Budapest",
   },
   {
     heading: "University of West Hungary",
     roles: [
       {
-        name: "Research Software Developer",
+        name: "Research Assistant",
         start: "2013",
         end: "2015",
+        responsibilities: [
+          `Early adoption of data science methodologies in environmental research. Delivered a multivariate regression component in R and Java for analysis of time-series data used in a significant Earth System research project (25294/207 TÁMOP-4.2.2.C-11/1/KONV-2012-0015).`,
+          `Presented research findings at conferences and co-authored publications, showcasing the project's advancements.`,
+          `Administered a cloud-based Linux web server (Debian) and MongoDB database, supporting collaboration and data management for multiple members of the research project.`,
+        ],
       },
     ],
     badges: [
@@ -154,15 +158,6 @@ const professionalExperience: Experience[] = [
       "Apache Tomcat",
       "MongoDB",
       "VMware ESXi",
-    ],
-    responsibilities: [
-      `Develivered a data analytic plugin (multivariate regression) in R and
-      Java for a data science framework used in the 25294/207
-      TÁMOP-4.2.2.C-11/1/KONV-2012-0015 Earth-system research project.`,
-      `Presented my research work on multiple conferences and was co-author in
-      the publications.`,
-      `Administered a virtual web server running in the cloud, supporting
-      multiple members of the research project.`,
     ],
     location: "Sopron",
   },
@@ -178,29 +173,19 @@ const professionalExperience: Experience[] = [
         <div class="flex flex-col sm:grid grid-cols-12 gap-2 sm:gap-4">
           {experience.roles.map((role) => (
             <>
-              {/* TODO: Code duplication */}
-              <div class="hidden sm:block pt-1 col-span-2 font-bold">
-                {role.start} - {role.end ? role.end : "Present"}
-              </div>
               <div class="col-span-10">
                 <h4>{role.name}</h4>
+                <ul class="flex flex-col divide-y">
+                {role.responsibilities.map((responsibility) => (
+                  <li class="p-2">{responsibility}</li>
+                ))}
+                </ul>
               </div>
-              <div class="block sm:hidden pt-1 col-span-2 font-bold">
+              <div class="block pt-1 col-span-2 font-bold">
                 {role.start} - {role.end ? role.end : "Present"}
               </div>
             </>
           ))}
-          <div class="col-span-10">
-            <div />
-            <div>
-              <ul class="flex flex-col divide-y">
-                {experience.responsibilities.map((responsibility) => (
-                  <li class="p-2">{responsibility}</li>
-                ))}
-              </ul>
-            </div>
-          </div>
-          <div class="col-span-2" />
           {experience.badges && (
             <div class="col-span-10">
               <div>

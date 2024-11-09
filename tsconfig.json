@@ -3,7 +3,7 @@
     "jsx": "react",
     "module": "esnext",
     "strict": true,
-    "target": "es5",
+    "target": "es5"
   },
   "extends": "astro/tsconfigs/base",
   "include": [

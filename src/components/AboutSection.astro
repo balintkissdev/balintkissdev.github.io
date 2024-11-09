@@ -6,30 +6,30 @@ import profile from "../assets/cv_profile.jpg";
 
 <ResumeSection id="about">
   <div
-    class="w-full h-screen flex flex-col items-center justify-center -mt-16 lg:gap-16"
+    class="w-full flex flex-col items-center justify-center lg:gap-16"
   >
       <Image
         class="inline-block lg:hidden rounded-full w-40 h-40 md:w-80 md:h-80"
         src={profile}
         alt="Profile picture of Bálint Kiss in blue shirt behind a houseplant"
-      />
-    <h1 class="text-center font-bold">
-      Balint<span class="text-gray-500">&nbsp;Kiss</span>
-    </h1>
+        />
     <div
       class="flex flex-col items-stretch gap-4 lg:gap-8 md:text-lg text-justify"
     >
+      <div class="gap-2">
+        <div class="text-base md:text-lg">Hi! My name is</div>
+        <div class="text-center text-4xl font-bold">
+          Bálint<span class="text-gray-500">&nbsp;Kiss</span>
+        </div>
+      </div>
       <p>
-        Passionate software developer with a Master's degree in Computer Science
-        followed by {new Date().getFullYear() - 2017}+ years of experience in
-        the industry. I'm a software technology enthusiast who keeps improving
-        his skills and I always apply best practices and engineering principles
-        when providing technical solutions in order to solve the business needs
-        of my client.
+        Passionate Senior Software Engineer with {new Date().getFullYear() - 2017}+ years of professional experience and a strong background in Computer Science (Master of Science degree), successfully resolving challenges in the fields of Systems Programming, Backend Development, Network Programming, Cloud Computing and IoT.
       </p>
       <p>
-        This site was created by me using <i>React</i>,
-        <i>Tailwind CSS</i> and <i>Astro</i>.
+        My enthusiasm not only drives me to continuously improve my skills in various technologies and software architecture design, but also to inspire and actively share knowledge with my team members. I apply best practices and sound engineering principles to deliver clean and efficient technical solutions in order to solve the business needs of my clients.
+      </p>
+      <p>
+        In my free time, I develop side projects focused on game development.
       </p>
     </div>
   </div>

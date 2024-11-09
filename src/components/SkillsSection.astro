@@ -10,7 +10,7 @@ import TechSkillRow from "./TechSkillRow.astro";
     <div class="flex flex-col divide-y">
       <TechSkillRow
         title="Programming languages"
-        skills={["C++", "Go", "Python", "Bash", "Java", "TypeScript", "R"]}
+        skills={["C++", "Go", "Rust", "Python", "Bash"]}
       />
       <TechSkillRow
         title="C++-related technologies"
@@ -19,48 +19,46 @@ import TechSkillRow from "./TechSkillRow.astro";
           "Make",
           "Clang Tooling",
           "Qt",
-          "QML",
           "Boost",
           "Google Test",
           "Google Mock",
-          "libopenssl",
         ]}
       />
       <TechSkillRow
-        title="Cloud"
-        skills={["Microsoft Azure", "Azure IoT Edge", "Cloud Foundry"]}
+        title="Graphics"
+        skills={["OpenGL", "WebGL"]}
       />
       <TechSkillRow
         title="Backend"
-        skills={["RabbitMQ", "MQTT", "NATS", "REST", "OpenAPI", "gRPC"]}
+        skills={["REST", "RabbitMQ", "MQTT", "NATS", "OpenAPI", "gRPC"]}
       />
       <TechSkillRow
-        title="Web development"
-        skills={["React", "HTML5", "CSS", "Tailwind CSS"]}
+        title="Infra"
+        skills={["Microsoft Azure", "Docker"]}
+      />
+      <TechSkillRow
+        title="Frontend/Web development"
+        skills={["React", "Tailwind CSS", "WebAssembly"]}
       />
       <TechSkillRow
         title="Database systems"
         skills={["PostgreSQL", "MongoDB"]}
       />
-      <TechSkillRow title="Containerization" skills={["Docker"]} />
       <TechSkillRow
         title="Operating systems"
         skills={[
-          "Microsoft Windows",
-          "Debian",
-          "Ubuntu",
-          "Red Hat",
+          "Arch Linux",
           "Fedora",
+          "Red Hat",
+          "Ubuntu",
+          "Debian",
+          "Microsoft Windows",
           "Solaris",
         ]}
       />
       <TechSkillRow
         title="Version control"
-        skills={["Git", "Perforce", "ClearCase"]}
-      />
-      <TechSkillRow
-        title="Editors and IDEs"
-        skills={["Neovim", "Visual Studio Code", "Visual Studio", "Qt Creator"]}
+        skills={["Git", "Perforce"]}
       />
       <TechSkillRow
         title="Other"
@@ -89,11 +87,10 @@ import TechSkillRow from "./TechSkillRow.astro";
     </Button>
   </div>
   <div class="mb-2">
-    <h3>Other skills</h3>
+    <h3>Soft skills</h3>
     <ul class="ml-4 list-disc list-inside">
       <li>Growth mindset</li>
       <li>Conducting interviews, mentoring, knowledge sharing</li>
-      <li>Software design skills, knowledge of Design Patterns, Anti-patterns, API design</li>
       <li>Interest for new technologies, continous self-education</li>
       <li>Presenting to customers</li>
     </ul>

@@ -3,7 +3,7 @@ interface Props {
   institute: string;
   location: string;
   degree: string;
-  duration: string;
+  graduationYear: string;
   specialization: string;
   thesisLevel: string;
   thesisTitle: string;
@@ -14,7 +14,7 @@ const {
   institute,
   location,
   degree,
-  duration,
+  graduationYear,
   specialization,
   thesisLevel,
   thesisTitle,
@@ -30,7 +30,6 @@ const {
     <p class="text-gray-500">{location}</p>
     <div class="pt-1 col-span-2">
       <h4 class="">{degree}</h4>
-      <p class="py-2 font-bold">{duration}</p>
     </div>
     <p class="pb-2">
       {specialization}
@@ -41,5 +40,8 @@ const {
     <p>
       Participated in <i>{research}</i> research project.
     </p>
+  </div>
+  <div class="block pt-1 col-span-2 font-bold">
+    Graduated in {graduationYear}
   </div>
 </div>
