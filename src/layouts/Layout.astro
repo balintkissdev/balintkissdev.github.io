@@ -12,7 +12,11 @@ import "../styles/global.css";
   </head>
   <body>
     <div>
-      <Sidebar />
+      <!--
+        Keep client directive to hydrate Sidebar, otherwise JavaScript won't load.
+        Make hamburger clickable on tablet and mobile devices only.
+      -->
+      <Sidebar client:media="(max-width: 1024px)" />
       <div>
         <main class="pt-0 lg:pl-72 h-full flex items-center justify-center">
           <div class="p-8">
