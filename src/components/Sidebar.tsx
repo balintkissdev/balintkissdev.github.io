@@ -10,6 +10,7 @@ interface SideBarLink {
 
 const sideBarLinks: SideBarLink[] = [
   { name: "Home, sweet home", href: "/" },
+  { name: "Blog", href: "/blog" },
   { name: "Resume", href: "/resume" },
 ];
 

@@ -10,16 +10,16 @@ import "../styles/global.css";
     <meta name="viewport" content="width=device-width" />
     <title>Bálint Kiss &ndash; Professional Software Engineer</title>
   </head>
-  <body>
-    <div>
+  <body class="min-h-screen flex flex-col">
+    <div class="flex-grow flex">
       <!--
         Keep client directive to hydrate Sidebar, otherwise JavaScript won't load.
         Make hamburger clickable on tablet and mobile devices only.
       -->
       <Sidebar client:media="(max-width: 1024px)" />
-      <div>
-        <main class="pt-0 lg:pl-72 h-full flex items-center justify-center">
-          <div class="p-8">
+      <div class="flex-grow flex flex-col w-full">
+        <main class="pt-0 lg:pl-72 h-full flex-grow flex items-start justify-center">
+          <div class="p-8 flex flex-col items-center justify-center">
             <slot />
           </div>
         </main>

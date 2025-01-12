@@ -11,5 +11,18 @@ export default defineConfig({
     }),
     react(),
   ],
+  markdown: {
+    shikiConfig: {
+      theme: 'laserwave',
+    },
+  },
   site: "https://wwww.balintkissdev.com",
+  vite: {
+    server: {
+      watch: {
+        // Stop Astro from crashing when my editor makes a backup file
+        ignored: ['*.astro~', '*.md~'],
+      },
+    }
+  },
 });

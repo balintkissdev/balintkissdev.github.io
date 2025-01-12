@@ -2,7 +2,23 @@
 module.exports = {
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
   theme: {
-    extend: {},
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            fontSize: '18px',
+            lineHeight: '1.5rem',
+            p: {
+              fontSize: '18px',
+              lineHeight: '1.5rem',
+            },
+            'code': {
+              fontSize: '16px',
+            },
+          },
+        },
+      },
+    },
     fontSize: {
       sm: ["16px"],
       base: ["18px", "1.5rem"],
@@ -13,5 +29,7 @@ module.exports = {
       "4xl": ["76px"],
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography')
+  ],
 };
