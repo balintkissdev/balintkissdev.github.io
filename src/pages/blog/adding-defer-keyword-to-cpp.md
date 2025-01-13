@@ -688,7 +688,7 @@ and gave up. But there's a high chance that maybe I am just over-obsessing over
 a couple CPU instructions that are just peanuts compared to the grand scheme of
 things. I still wanted my identical inlined `DEFER` though!
 
-Exception handling has the change to enable bad error handling practices where
+Exception handling has the chance to enable bad error handling practices where
 the programmer uses "catch all" but doesn't handle the catched error and
 instead passes and propagates the exception further in the function call chain.
 I saw that happen with my own eyes, although it was in Java codebase and not
