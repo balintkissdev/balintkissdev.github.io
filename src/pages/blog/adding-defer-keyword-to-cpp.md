@@ -1,7 +1,8 @@
 ---
 layout: ../../layouts/PostLayout.astro
 title: "Adding \"defer\" keyword to C++"
-pubDate: 2025-01-13
+published: 2025-01-13
+updated: 2025-01-15
 summary: "\"defer\" is a control flow mechanism in both Go and Zig that automate resource cleanup function calls and simplifies writing error handling code. When I found that I can have the same feature in C++11 using macros and RAII for my 3D renderer project, I couldn't contain myself and wanted to share it."
 ---
 
@@ -59,7 +60,11 @@ which sounds confusing at first read, but the thing you have to know is
 > first create an empty temporary Win32 window that doesn't show anything and
 > a temporary OpenGL context that doesn't do anything.
 
-This is also called "fake context" or "helper context". It's an actual Catch-22 situation where "you need to have an OpenGL context before you can have an OpenGL context". Even the documentation of the [gl46](https://docs.rs/gl46/latest/gl46/#gl_get_proc_address) Rust crate is commenting on it as
+This is also called "fake context" or "helper context". It's an actual Catch-22
+situation where "you need to have an OpenGL context before you can have an
+OpenGL context". Even the documentation of the
+[gl46](https://docs.rs/gl46/latest/gl46/#gl_get_proc_address) Rust crate is
+commenting on it as
 
 > "That sounds silly, but it's true."
 
@@ -233,8 +238,24 @@ Okay, I was not fully honest and hid this information from you: current GCC and 
 have
 [`__attribute__(cleanup)`](https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html#index-cleanup-variable-attribute)
 that tracks a variable and runs a function when it goes out of scope. No MSVC
-equivalent though, aside from simulating it with `__try` and `__finally` C
-language extensions.
+equivalent though, ~~aside from simulating it with `__try` and `__finally` C
+language extensions~~.
+
+***UPDATE (2025-01-15):*** Check out [Implementing smart pointers for the C
+programming language by Snaipe](https://snai.pe/posts/c-smart-pointers) and
+[Comparing GCC C cleanup attribute with C++ RAII by Jussi
+Pakkanen](https://nibblestew.blogspot.com/2016/07/comparing-gcc-c-cleanup-attribute-with.html)
+as additional good reads in the `__attribute(cleanup)__` topic. As I
+researched this, I was incorrect and there's no way to use MSVC's `__try` and
+`__finally` for RAII and defer mechanism. I have a C side project
+that I am working on where I wanted to try implementing my own `defer`, but
+didn't want to sacrifice portability, so it was not worth the effort for me.
+When looking for existing
+solutions, I found [Defer](https://github.com/moon-chilled/Defer) GitHub
+project by [moon-chilled](https://github.com/moon-chilled) which operates on
+`setjmp` and `longjmp` to make `defer` work with MSVC's C compiler. It
+introduces performance overhead as opposed to GCC or Clang, and there's a limit
+of 32 deferred statements by default (which is plenty).
 
 ## Naively using RAII won't work
 

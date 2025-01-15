@@ -10,7 +10,14 @@ const { frontmatter } = Astro.props;
   <span class="text-center text-gray-600 italic">
     Written by Bálint Kiss &#x2022;
     Published on
-    {new Date(frontmatter.pubDate).toLocaleDateString('en-US', {
+    {new Date(frontmatter.published).toLocaleDateString('en-US', {
+      year: 'numeric',
+      month: 'long',
+      day: 'numeric'
+    })}
+    &#x2022;
+    Updated on
+    {new Date(frontmatter.updated).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'long',
       day: 'numeric'
