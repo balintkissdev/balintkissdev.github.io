@@ -845,7 +845,7 @@ const ScopedFunctorDefer tmpDeferVarName56 = ScopedFunctorDefer(ScopedFunctorDef
 ```
 
 Phew, that's all for now, I didn't know in advance that I'm going to do a deep
-dive like this. If there's one thing that you should get out of this, as that
+dive like this. If there's one thing that you should get out of this, is that
 don't apply `std::function` blindly everywhere. And implementing `defer` in C
 using `__attribute(cleanup)__` will be left as homework to you.
 
