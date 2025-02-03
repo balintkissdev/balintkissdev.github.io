@@ -18,12 +18,14 @@ import "../styles/global.css";
       -->
       <Sidebar client:media="(max-width: 1024px)" />
       <div class="flex-grow flex flex-col w-full">
-        <main class="pt-0 lg:pl-72 h-full flex-grow flex items-start justify-center">
-          <div class="p-8 flex flex-col items-center justify-center">
-            <slot />
-          </div>
-        </main>
-        <Footer />
+        <div class="lg:pl-72 w-full flex flex-col min-h-screen">
+          <main class="flex-grow flex items-start justify-center">
+            <div class="p-4 flex flex-col items-center justify-center">
+              <slot />
+            </div>
+          </main>
+          <Footer />
+        </div>
       </div>
     </div>
   </body>
