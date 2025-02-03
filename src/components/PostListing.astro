@@ -5,7 +5,7 @@ const allPosts = Object.values(import.meta.glob('../pages/blog/*.md', { eager: t
 <ul class="w-full text-left">
   {allPosts.map((post: any) => <li class="flex flex-col mb-2">
     <a
-      class="text-xl underline text-[rgb(122,113,113)] transition ease-in-out hover:text-[burlywood] duration-300"
+      class="text-xl underline text-[rgb(122,113,113)] link-hover"
       href={post.url}>
       {post.frontmatter.title}
     </a>

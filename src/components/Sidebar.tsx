@@ -97,7 +97,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="transition ease-in-out hover:text-[burlywood] duration-300"
+                    className="link-hover"
                     onClick={() => this.setState({ opened: false })}
                   >
                     {link.name}

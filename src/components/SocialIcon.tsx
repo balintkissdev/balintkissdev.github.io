@@ -11,7 +11,7 @@ const SocialIcon: React.FC<Props> = ({ href, children }) => {
       href={href}
       target="_blank"
       rel="noreferrer"
-      className="inline-block w-14 py-4 bg-[whitesmoke] rounded-full text-[#383838] text-center fa-xl transition ease-in-out hover:bg-[burlywood] duration-300"
+      className="inline-block w-14 py-4 bg-[whitesmoke] rounded-full text-[#383838] text-center fa-xl link-bg-hover"
     >
       {children}
     </a>
