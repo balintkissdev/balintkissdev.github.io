@@ -3,7 +3,7 @@ layout: ../../layouts/PostLayout.astro
 title: "Adding \"defer\" keyword to C++"
 published: 2025-01-13
 updated: 2025-01-15
-summary: "\"defer\" is a control flow mechanism in both Go and Zig that automate resource cleanup function calls and simplifies writing error handling code. When I found that I can have the same feature in C++11 using macros and RAII for my 3D renderer project, I couldn't contain myself and wanted to share it."
+summary: "\"defer\" is a control flow mechanism in both Go and Zig that automate resource cleanup function calls and simplifies writing error handling code. When I found out that I can have the same feature in C++11 using macros and RAII for my 3D renderer project, I couldn't contain myself and wanted to share it."
 ---
 
 **Disclaimer:** I am not the inventor of this magic but merely a user of it as part of my toolbox. Other people
