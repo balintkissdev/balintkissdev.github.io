@@ -8,6 +8,48 @@ import GitHubButton from "react-github-btn";
 <ResumeSection id="projects" title="Check out my projects">
   <div class="flex flex-row flex-wrap justify-center lg:justify-start gap-8">
     <SideProjectCard
+      title="Awesome DOS"
+      url="https://github.com/balintkissdev/awesome-dos#readme"
+    >
+      <p>
+        <GitHubButton
+          href="https://github.com/balintkissdev/awesome-dos"
+          data-size="large"
+          data-show-count="true"
+          aria-label="Star balintkissdev/awesome-dos on GitHub"
+          client:load
+        >
+          Star
+        </GitHubButton>
+      </p>
+      <p>
+        Curated list of references for development of DOS applications and
+        learning about the system itself. The goal of this list is to collect
+        information and act as a starting point for someone who wants to start
+        out retro-programming for the DOS platform.
+      </p>
+      <p>
+        This list is{" "}
+        <a
+          href="https://twitter.com/awesome__re/status/1355813614469271555"
+          target="_blank"
+          rel="noreferrer"
+        >
+          featured
+        </a>{" "}
+         on the official{" "}
+        <a
+          href="https://github.com/sindresorhus/awesome"
+          target="_blanK"
+          rel="noreferrer"
+          class="underline"
+        >
+          Awesome collection
+        </a>{" "}
+         made by Sindre Sorhus.
+      </p>
+    </SideProjectCard>
+    <SideProjectCard
       title="Networked client-server multiplayer architecture demo written in Rust"
       url="https://github.com/balintkissdev/multiplayer-game-demo-rust"
       domain="Network"
@@ -65,6 +107,17 @@ import GitHubButton from "react-github-btn";
     </SideProjectCard>
 
     <SideProjectCard
+      title="Real-time chat application service written in Rust"
+      url="https://github.com/balintkissdev/realtime-chat-rust"
+      domain="Network"
+      badges={["Rust", "TypeScript", "Tokio", "WebSocket", "Actix Web"]}
+    >
+      <p>
+        A TCP/WebSocket networking project used to mix together Rust for chat backend and TypeScript for frontend.
+      </p>
+    </SideProjectCard>
+
+    <SideProjectCard
       title="Raycasting pseudo-3D graphics engine"
       url="https://github.com/balintkissdev/raycaster-engine"
       domain="Graphics"
@@ -86,48 +139,6 @@ import GitHubButton from "react-github-btn";
           Desktop browser-playable live demo
         </a>{" "}
          is compiled to WebAssembly using Emscripten.
-      </p>
-    </SideProjectCard>
-
-    <SideProjectCard
-      title="Awesome DOS"
-      url="https://github.com/balintkissdev/awesome-dos#readme"
-    >
-      <p>
-        <GitHubButton
-          href="https://github.com/balintkissdev/awesome-dos"
-          data-size="large"
-          data-show-count="true"
-          aria-label="Star balintkissdev/awesome-dos on GitHub"
-          client:load
-        >
-          Star
-        </GitHubButton>
-      </p>
-      <p>
-        Curated list of references for development of DOS applications and
-        learning about the system itself. The goal of this list is to collect
-        information and act as a starting point for someone who wants to start
-        out retro-programming for the DOS platform.
-      </p>
-      <p>
-        This list is{" "}
-        <a
-          href="https://twitter.com/awesome__re/status/1355813614469271555"
-          target="_blank"
-          rel="noreferrer"
-        >
-          featured
-        </a>{" "}
-         on the official{" "}
-        <a
-          href="https://github.com/sindresorhus/awesome"
-          target="_blanK"
-          rel="noreferrer"
-        >
-          Awesome collection
-        </a>{" "}
-         made by Sindre Sorhus.
       </p>
     </SideProjectCard>
   </div>
