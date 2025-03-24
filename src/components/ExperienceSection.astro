@@ -18,23 +18,24 @@ interface Experience {
 
 const professionalExperience: Experience[] = [
   {
-    heading: "DMG MORI Heitec Digital Ltd.",
+    heading: "DMG MORI Heitec Digital",
     roles: [
       {
         name: "Senior Software Engineer",
         start: "2020",
         responsibilities: [
-          `Bringing expertise to CELOS X, an Industry 4.0 SaaS cloud solution on Microsoft Azure providing digitization of CNC machines. Delivered features requested by strategic partner companies to automate their factory production.`,
-          `Leading technical decisions for large-scale C++ and Go backend services, utilizing stream processing to transform multi-vendor CNC machine data and transmitting them via publish-subscribe messaging.`,
-          `Integrating CELOS X with a diverse set of industrial network communication protocols (OPC UA, MTConnect, MQTT) to ensure seamless connectitvity with various business client systems, becoming a domain specialist in them.`,
-          `Resolved a critical dependency risk affecting whole system architecture in time before release. Utilized cross-team collaboration and coordination in the process, resulting in successful mitigation.`,
-          `Playing a pivotal role in talent acquisition and fostering skill growth among developers. Conducting over 15 interviews and assisting onboarding through architecture documentation and comprehensive onboarding guides.`
+          `Brought expertise to CELOS X, a large-scale Industry 4.0 SaaS cloud solution on Microsoft Azure IoT, providing digitization of CNC machines. Delivered features requested by a strategic partner company to automate their factory production.`,
+          `Provided technical guidance during development of backend microservices that communicate through REST, gRPC and publish-subscribe messaging (NATS). The services utilized stream processing to transform CNC machine data, persisted time-series data into a PostgreSQL database, and transmitted the results to client business systems.`,
+          `Integrated CELOS X with a diverse set of industrial network communication protocols (OPC UA, MTConnect, MQTT) to ensure seamless connectitvity with various business client systems, becoming a domain specialist in them.`,
+          `Resolved a critical dependency risk affecting whole system architecture before release. Utilized cross-team collaboration and coordination to ensure stability of components, resulting in successful pre-release mitigation.`,
+          `Played a company-level role in talent acquisition by conducting over 15 technical interviews. Assisted on-boarding through hands-on mentoring, architecture documentation and comprehensive on-boarding guides.`
         ],
       },
     ],
     badges: [
       "C++",
       "Go",
+      "Python",
       "NATS",
       "gRPC",
       "OPC UA",
@@ -57,14 +58,15 @@ const professionalExperience: Experience[] = [
         start: "February 2019",
         end: "June 2019",
         responsibilities: [
-          `Independently developed an embedded C++ Qt/QML application for a medical device's Raspberry Pi touchscreen interface. Controlled a robot arm via UART serial communication, processed and forwarded medical analysis results to an MQTT messaging broker enabling real-time push notifications on mobile devices.`
+          `Independently developed an embedded C++ Qt/QML application for a Raspberry Pi with touchscreen interface, which was integrated as part of a medical device by a team of electrical engineers. Controlled a robot arm through UART serial communication and forwarded medical analysis
+results in real-time via MQTT publish-subscribe messaging to a mobile push notification service.`
         ],
       },
     ],
-    badges: ["C++", "Raspberry Pi", "Qt", "QML", "MQTT"],
+    badges: ["C++", "Raspberry Pi", "Qt", "QML", "MQTT", "UART"],
   },
   {
-    heading: "evosoft Hungary Ltd.",
+    heading: "evosoft",
     roles: [
       {
         name: "Senior Software Engineer",
