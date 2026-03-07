@@ -17,17 +17,20 @@ If you are only interested in using this in your project, then TL;DR just copy-p
 
 ```cpp
 /// RAII wrapper for callable statements invoked by DEFER()
-template <typename F>
+template <typename Callable>
 struct ScopedDefer
 {
-    ScopedDefer(F f)
+    ScopedDefer(Callable f)
         : f(f)
     {
     }
 
-    ~ScopedDefer() { f(); }
+    ~ScopedDefer()
+    {
+        f();
+    }
 
-    F f;
+    Callable f;
 };
 
 /// A common macro for string concatenation during preprocessing phase.
@@ -452,22 +455,25 @@ DEFER({
 });
 ```
 
-The heart of it is a struct that wraps in a callable `F` type and uses RAII
+The heart of it is a struct that wraps in a callable type `Callable` type and uses RAII
 to execute it in destruction.
 
 ```cpp
 /// RAII wrapper for callable statements invoked by DEFER()
-template <typename F>
+template <typename Callable>
 struct ScopedDefer
 {
-    ScopedDefer(F f)
+    ScopedDefer(Callable f)
         : f(f)
     {
     }
 
-    ~ScopedDefer() { f(); }
+    ~ScopedDefer()
+    {
+        f();
+    }
 
-    F f;
+    Callable f;
 };
 ```
 
