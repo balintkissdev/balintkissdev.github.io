@@ -61,7 +61,7 @@ class Sidebar extends React.Component<{}, SidebarState> {
         </button>
         <nav
           className={`
-        fixed lg:flex flex-col items-center justify-start max-w-screen-sm lg:max-w-[16rem]
+        fixed lg:flex flex-col items-center justify-start max-w-(--breakpoint-sm) lg:max-w-[16rem]
         h-full bg-[#383837] text-[whitesmoke] px-6 transition lg:transition-none duration-200 ease-in z-10
         ${
           this.state.opened

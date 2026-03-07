@@ -1,67 +1,80 @@
-@import "@fortawesome/fontawesome-free/css/all.css";
+@import '@fortawesome/fontawesome-free/css/all.css' layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-*,
-*::before,
-*::after {
-  @apply m-0 box-border p-0
-}
+@config '../../tailwind.config.cjs';
 
-:root,
-body {
-  @apply flex flex-col
-}
-
-html {
-  font-size: 16px;
-}
-h1 {
-  @apply text-2xl
-}
-h2 {
-  @apply text-xl
-}
-h3 {
-  @apply text-lg
-}
-h4 {
-  font-size: 20px;
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-@media only screen and (min-width: 640px) {
+@utility link-hover {
+  @apply duration-300 ease-in-out;
+  &:hover {
+    @apply text-[burlywood];
+  }
+}
+
+@utility link-bg-hover {
+  @apply duration-300 ease-in-out;
+  &:hover {
+    @apply bg-[burlywood];
+  }
+}
+
+@layer utilities {
+  *,
+  *::before,
+  *::after {
+    @apply m-0 box-border p-0;
+  }
+
+  :root,
+  body {
+    @apply flex flex-col;
+  }
+
   html {
-    font-size: 18px;
+    font-size: 16px;
   }
   h1 {
-    @apply font-bold text-4xl
+    @apply text-2xl;
   }
   h2 {
-    @apply text-3xl
+    @apply text-xl;
   }
   h3 {
-    @apply text-2xl
+    @apply text-lg;
   }
   h4 {
-    @apply text-xl
+    font-size: 20px;
   }
-}
 
-a {
-  @apply cursor-pointer
-}
+  @media only screen and (min-width: 640px) {
+    html {
+      font-size: 18px;
+    }
+    h1 {
+      @apply font-bold text-4xl;
+    }
+    h2 {
+      @apply text-3xl;
+    }
+    h3 {
+      @apply text-2xl;
+    }
+    h4 {
+      @apply text-xl;
+    }
+  }
 
-@layer components {
-  .link-hover,
-  .link-bg-hover {
-    @apply transition ease-in-out duration-300
-  }
-  .link-hover:hover {
-    @apply text-[burlywood]
-  }
-  .link-bg-hover:hover {
-    @apply bg-[burlywood]
+  a {
+    @apply cursor-pointer;
   }
 }

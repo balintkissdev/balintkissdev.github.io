@@ -11,15 +11,15 @@ import "../styles/global.css";
     <title>Bálint Kiss &ndash; Professional Software Engineer</title>
   </head>
   <body class="min-h-screen flex flex-col">
-    <div class="flex-grow flex">
+    <div class="grow flex">
       <!--
         Keep client directive to hydrate Sidebar, otherwise JavaScript won't load.
         Make hamburger clickable on tablet and mobile devices only.
       -->
       <Sidebar client:media="(max-width: 1024px)" />
-      <div class="flex-grow flex flex-col w-full">
+      <div class="grow flex flex-col w-full">
         <div class="lg:pl-72 w-full flex flex-col min-h-screen">
-          <main class="flex-grow flex items-start justify-center">
+          <main class="grow flex items-start justify-center">
             <div class="p-4 flex flex-col items-center justify-center">
               <slot />
             </div>

@@ -11,8 +11,8 @@
          prose-p:text-justify
 
          prose-pre:max-w-80
-         prose-pre:sm:max-w-lg
-         prose-pre:md:max-w-none
+         sm:prose-pre:max-w-lg
+         md:prose-pre:max-w-none
          prose-pre:rounded-lg
 
          prose-blockquote:text-gray-600
@@ -22,10 +22,10 @@
   <style is:global>
     /* HACK: Duplication of link-hover style because processed separately from global.css */
     .prose a {
-      @apply transition ease-in-out duration-300
+      @apply duration-300
     }
     .prose a:hover {
-      @apply text-[burlywood]
+      @apply text-[burlywood] duration-300
     }
     /* Remove surrounding quotes from blockquote */
     .prose blockquote p::before,
