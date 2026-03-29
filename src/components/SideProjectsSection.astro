@@ -6,10 +6,36 @@ import GitHubButton from "react-github-btn";
 ---
 
 <ResumeSection id="projects" title="Check out my projects">
-  <div class="flex flex-row flex-wrap justify-center lg:justify-start gap-8">
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+    <SideProjectCard
+      title="Real-time C++ 3D renderer"
+      url="https://github.com/balintkissdev/3d-renderer-cpp"
+      domain="Graphics"
+      badges={["C++", "Direct3D 12", "OpenGL", "WebGL", "WebAssembly", "Emscripten"]}
+      image="3d_renderer_cpp_preview.png"
+    >
+      <p>
+        A hardware-accelerated 3D renderer written in C++. Runs using Direct3D 12 or OpenGL as graphics API on desktop and WebGL2 in web browsers.
+      </p>
+      <p>
+        {" "}
+        <a
+          href="https://balintkissdev.github.io/3d-renderer-cpp"
+          target="_blank"
+          rel="noreferrer"
+          class="underline"
+        >
+          Desktop browser-playable live demo
+        </a>{" "}
+         is compiled to WebAssembly using Emscripten.
+      </p>
+    </SideProjectCard>
+
     <SideProjectCard
       title="Awesome DOS"
       url="https://github.com/balintkissdev/awesome-dos#readme"
+      domain="Retro programming"
+      image="awesome_dos_preview.png"
     >
       <p>
         <GitHubButton
@@ -49,22 +75,14 @@ import GitHubButton from "react-github-btn";
          made by Sindre Sorhus.
       </p>
     </SideProjectCard>
-    <SideProjectCard
-      title="Networked client-server multiplayer architecture demo written in Rust"
-      url="https://github.com/balintkissdev/multiplayer-game-demo-rust"
-      domain="Network"
-      badges={["Rust", "Tokio", "UDP", "OpenGL"]}
-    >
-      <p>
-        A technical demonstration showcasing UDP socket programming, Tokio asynchronous runtime usage, and client-server game architecture in Rust. Features real-time synchronization of 2D movement between local and remote players.
-      </p>
-    </SideProjectCard>
+
 
     <SideProjectCard
       title="Real-time Rust 3D renderer"
       url="https://github.com/balintkissdev/3d-renderer-rust"
       domain="Graphics"
       badges={["Rust", "OpenGL", "WebGL", "WebAssembly"]}
+      image="3d_renderer_rust_preview.png"
     >
       <p>
         A hardware-accelerated 3D renderer written in Rust. Runs using OpenGL 4 as graphics API on desktop and WebGL2 on WebAssembly.
@@ -84,33 +102,11 @@ import GitHubButton from "react-github-btn";
     </SideProjectCard>
 
     <SideProjectCard
-      title="Real-time C++ 3D renderer"
-      url="https://github.com/balintkissdev/3d-renderer-cpp"
-      domain="Graphics"
-      badges={["C++", "OpenGL", "WebGL", "WebAssembly", "Emscripten"]}
-    >
-      <p>
-        A hardware-accelerated 3D renderer written in C++. Runs using OpenGL 4.6 or 3.3 as graphics API on desktop and WebGL2 in web browsers.
-      </p>
-      <p>
-        {" "}
-        <a
-          href="https://balintkissdev.github.io/3d-renderer-cpp"
-          target="_blank"
-          rel="noreferrer"
-          class="underline"
-        >
-          Desktop browser-playable live demo
-        </a>{" "}
-         is compiled to WebAssembly using Emscripten.
-      </p>
-    </SideProjectCard>
-
-    <SideProjectCard
       title="Real-time chat application service written in Rust"
       url="https://github.com/balintkissdev/realtime-chat-rust"
       domain="Network"
       badges={["Rust", "TypeScript", "Tokio", "WebSocket", "Actix Web"]}
+      image="realtime_chat_rust_preview.png"
     >
       <p>
         A TCP/WebSocket networking project used to mix together Rust for chat backend and TypeScript for frontend.
@@ -122,9 +118,10 @@ import GitHubButton from "react-github-btn";
       url="https://github.com/balintkissdev/raycaster-engine"
       domain="Graphics"
       badges={["C++", "SDL2", "WebAssembly", "Emscripten"]}
+      image="raycaster_engine_preview.png"
     >
       <p>
-        Retro 3D graphics engine demo inspired by techniques used in Wolfenstein 3D.
+        Retro 3D graphics engine demo I've written back in 2016, inspired by techniques used in Wolfenstein 3D.
         Uses vector math and CPU-based software rendering to turn 2D maps into
         3D space, includes double-buffering and texture mapping.
       </p>

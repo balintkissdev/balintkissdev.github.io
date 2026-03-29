@@ -2,18 +2,26 @@
 import Button from "./Button.astro";
 import Badge from "./Badge.astro";
 
+import { Image } from 'astro:assets'
+import demoImage from '../assets/3d_renderer_cpp_preview.png'
+
 interface Props {
   title: string;
   url: string;
   badges?: string[];
   domain?: string;
+  image?: string;
 }
 
-const { title, url, badges, domain } = Astro.props;
+const { title, url, badges, domain, image } = Astro.props;
+
+const images = import.meta.glob<{ default: ImageMetadata }>('../assets/side_project_preview/*');
+const resolved = image ? (await images[`../assets/side_project_preview/${image}`]()).default : null;
 ---
 
-<div class="p-4 border-solid rounded-lg border-2 xl:w-80">
-  <Button href={url} classNames="w-full">
+<div class="p-4 border-solid rounded-lg border-2">
+  <Button href={url} classNames="w-full rounded-lg">
+    {resolved && <Image src={resolved} alt="demo image" class="mb-2 rounded-lg" />}
     <div class="flex flex-col items-center">
       <i class="p-4 fa-brands fa-github fa-xl"></i>
       <p>{title}</p>
