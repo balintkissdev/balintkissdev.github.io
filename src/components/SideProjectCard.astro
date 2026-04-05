@@ -1,9 +1,9 @@
 ---
 import Button from "./Button.astro";
 import Badge from "./Badge.astro";
+import GitHubButton from "react-github-btn";
 
 import { Image } from 'astro:assets'
-import demoImage from '../assets/3d_renderer_cpp_preview.png'
 
 interface Props {
   title: string;
@@ -11,9 +11,25 @@ interface Props {
   badges?: string[];
   domain?: string;
   image?: string;
+  githubStarRepo?: string;
+  description: string;
 }
 
-const { title, url, badges, domain, image } = Astro.props;
+const { title, url, badges, domain, image, githubStarRepo, description } = Astro.props;
+
+function renderDescription(text: string): string {
+  return text
+    .trim()
+    .split(/\n\n+/)
+    .map(para => {
+      const withLinks = para.replace(
+        /\[([^\]]+)\]\(([^)]+)\)/g,
+        '<a href="$2" target="_blank" rel="noreferrer" class="underline">$1</a>'
+      );
+      return `<p>${withLinks}</p>`;
+    })
+    .join('\n');
+}
 
 const images = import.meta.glob<{ default: ImageMetadata }>('../assets/side_project_preview/*');
 const resolved = image ? (await images[`../assets/side_project_preview/${image}`]()).default : null;
@@ -37,5 +53,20 @@ const resolved = image ? (await images[`../assets/side_project_preview/${image}`
       </div>
     )
   }
-  <p class="pt-4"><slot /></p>
+  <div class="pt-4">
+    {githubStarRepo && (
+      <p class="mb-2">
+        <GitHubButton
+          href={`https://github.com/${githubStarRepo}`}
+          data-size="large"
+          data-show-count="true"
+          aria-label={`Star ${githubStarRepo} on GitHub`}
+          client:load
+        >
+          Star
+        </GitHubButton>
+      </p>
+    )}
+    <div set:html={renderDescription(description)} />
+  </div>
 </div>
