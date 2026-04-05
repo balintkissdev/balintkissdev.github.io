@@ -1,17 +1,16 @@
 - id: 3d-renderer-cpp
   title: "Real-time C++ 3D renderer"
-  url: "https://github.com/balintkissdev/3d-renderer-cpp"
+  repoUrl: "https://github.com/balintkissdev/3d-renderer-cpp"
+  demoUrl: "/3d-renderer-cpp"
   domain: "Graphics"
   badges: ["C++", "Direct3D 12", "OpenGL", "WebGL", "WebAssembly", "Emscripten"]
   image: "3d_renderer_cpp_preview.png"
   description: |
-    A hardware-accelerated 3D renderer written in C++. Runs using Direct3D 12 or OpenGL as graphics API on desktop and WebGL2 in web browsers.
-
-    [Desktop browser-playable live demo](https://balintkissdev.github.io/3d-renderer-cpp) is compiled to WebAssembly using Emscripten.
+    A hardware-accelerated 3D renderer written in C++. Runs using Direct3D 12 or OpenGL as graphics API on desktop and WebGL2 in web browsers. Live demo compiled to WebAssembly using Emscripten.
 
 - id: awesome-dos
   title: "Awesome DOS"
-  url: "https://github.com/balintkissdev/awesome-dos#readme"
+  repoUrl: "https://github.com/balintkissdev/awesome-dos#readme"
   domain: "Retro programming"
   image: "awesome_dos_preview.png"
   githubStarRepo: "balintkissdev/awesome-dos"
@@ -22,18 +21,17 @@
 
 - id: 3d-renderer-rust
   title: "Real-time Rust 3D renderer"
-  url: "https://github.com/balintkissdev/3d-renderer-rust"
+  repoUrl: "https://github.com/balintkissdev/3d-renderer-rust"
+  demoUrl: "/3d-renderer-rust"
   domain: "Graphics"
   badges: ["Rust", "OpenGL", "WebGL", "WebAssembly"]
   image: "3d_renderer_rust_preview.png"
   description: |
-    A hardware-accelerated 3D renderer written in Rust. Runs using OpenGL 4 as graphics API on desktop and WebGL2 on WebAssembly.
-
-    [Desktop browser-playable live demo](https://balintkissdev.github.io/3d-renderer-rust) is compiled to WebAssembly using Emscripten.
+    A hardware-accelerated 3D renderer written in Rust. Runs using OpenGL 4 as graphics API on desktop and WebGL2 on WebAssembly. Live demo compiled to WebAssembly using Emscripten.
 
 - id: realtime-chat-rust
   title: "Real-time chat application service written in Rust"
-  url: "https://github.com/balintkissdev/realtime-chat-rust"
+  repoUrl: "https://github.com/balintkissdev/realtime-chat-rust"
   domain: "Network"
   badges: ["Rust", "TypeScript", "Tokio", "WebSocket", "Actix Web"]
   image: "realtime_chat_rust_preview.png"
@@ -42,11 +40,10 @@
 
 - id: raycaster-engine
   title: "Raycasting pseudo-3D graphics engine"
-  url: "https://github.com/balintkissdev/raycaster-engine"
+  repoUrl: "https://github.com/balintkissdev/raycaster-engine"
+  demoUrl: "/raycaster-engine/"
   domain: "Graphics"
   badges: ["C++", "SDL2", "WebAssembly", "Emscripten"]
   image: "raycaster_engine_preview.png"
   description: |
-    Retro 3D graphics engine demo I've written back in 2016, inspired by techniques used in Wolfenstein 3D. Uses vector math and CPU-based software rendering to turn 2D maps into 3D space, includes double-buffering and texture mapping.
-
-    [Desktop browser-playable live demo](https://balintkissdev.github.io/raycaster-engine/) is compiled to WebAssembly using Emscripten.
+    Retro 3D graphics engine demo I've written back in 2016, inspired by techniques used in Wolfenstein 3D. Uses vector math and CPU-based software rendering to turn 2D maps into 3D space, includes double-buffering and texture mapping. Live demo compiled to WebAssembly using Emscripten.

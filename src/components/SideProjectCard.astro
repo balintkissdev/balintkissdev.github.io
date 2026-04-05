@@ -7,7 +7,8 @@ import { Image } from 'astro:assets'
 
 interface Props {
   title: string;
-  url: string;
+  repoUrl: string;
+  demoUrl?: string;
   badges?: string[];
   domain?: string;
   image?: string;
@@ -15,7 +16,8 @@ interface Props {
   description: string;
 }
 
-const { title, url, badges, domain, image, githubStarRepo, description } = Astro.props;
+const { title, repoUrl, demoUrl, badges, domain, image, githubStarRepo, description } = Astro.props;
+const resolvedDemoUrl = demoUrl ? `${import.meta.env.SITE}${demoUrl}` : undefined;
 
 function renderDescription(text: string): string {
   return text
@@ -36,13 +38,26 @@ const resolved = image ? (await images[`../assets/side_project_preview/${image}`
 ---
 
 <div class="p-4 border-solid rounded-lg border-2">
-  <Button href={url} classNames="w-full rounded-lg">
-    {resolved && <Image src={resolved} alt="demo image" class="mb-2 rounded-lg" />}
-    <div class="flex flex-col items-center">
-      <i class="p-4 fa-brands fa-github fa-xl"></i>
-      <p>{title}</p>
-    </div>
-  </Button>
+  <a href={resolvedDemoUrl ?? repoUrl} target="_blank" rel="noreferrer" class="block mb-3 rounded-lg bg-[rgb(122,113,113)] p-2 hover:brightness-110 duration-300">
+    {resolved && <Image src={resolved} alt="demo image" class="rounded-lg mb-2" />}
+    <p class="text-center text-lg font-bold text-[whitesmoke]">{title}</p>
+  </a>
+  <div class="flex gap-2 mb-1">
+    <Button href={repoUrl} classNames="flex-1 rounded-lg">
+      <div class="flex items-center justify-center gap-2">
+        <i class="fa-brands fa-github fa-lg"></i>
+        <span>GitHub</span>
+      </div>
+    </Button>
+    {resolvedDemoUrl && (
+      <Button href={resolvedDemoUrl} classNames="flex-1 rounded-lg">
+        <div class="flex items-center justify-center gap-2">
+          <i class="fa-solid fa-play fa-lg"></i>
+          <span>Live Demo</span>
+        </div>
+      </Button>
+    )}
+  </div>
   {
     (domain || badges) && (
       <div>

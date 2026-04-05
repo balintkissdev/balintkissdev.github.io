@@ -11,7 +11,8 @@ const projects = await getCollection('side-projects');
     {projects.map(({ data: p }) => (
       <SideProjectCard
         title={p.title}
-        url={p.url}
+        repoUrl={p.repoUrl}
+        demoUrl={p.demoUrl}
         domain={p.domain}
         badges={p.badges}
         image={p.image}
