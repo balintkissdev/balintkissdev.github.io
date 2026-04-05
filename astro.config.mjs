@@ -13,7 +13,7 @@ export default defineConfig({
       theme: 'laserwave',
     },
   },
-  site: "https://wwww.balintkissdev.com",
+  site: "https://www.balintkissdev.com",
   vite: {
     plugins: [
         tailwindcss()
