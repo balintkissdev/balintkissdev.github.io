@@ -2,7 +2,7 @@
 layout: ../../layouts/PostLayout.astro
 title: "Adding \"defer\" keyword to C++"
 published: 2025-01-13
-updated: 2025-01-15
+updated: 2026-09-13
 summary: "\"defer\" is a control flow mechanism in both Go and Zig that automate resource cleanup function calls and simplifies writing error handling code. When I found out that I can have the same feature in C++11 using macros and RAII for my 3D renderer project, I couldn't contain myself and wanted to share it."
 ---
 
@@ -47,6 +47,8 @@ struct ScopedDefer
 Otherwise I hope the following further breakdown showing a real-life example that I ran
 into and a bonus look at the generated disassembly gives additional insight for
 people that are fans of C++ like me.
+
+## Table of contents
 
 ## We've all been there before
 
@@ -181,6 +183,8 @@ situation and use your judgement, use it when finding it appropriate, use
 something else when that's needed instead. And for the "lazy" part: the RAII applier
 still have to think in terms of lifetimes and ownership semantics to use it effectively.
 
+***UPDATE (2026-09-13):*** When you hear [Casey Muratori talk about why RAII is bad](https://www.youtube.com/watch?v=xt1KNDmOYqA), he means in the sense that on every lifetime scope exits the automatic cleanup gets called over and over unnecessarily and the better alternative is just using a single memory arena for allocations and at the end just clean that up once at the end. He is right though, this is something that can be called "aggregate cleanup". That's not applicable to my "fake OpenGL context and window" example though because of these being only needed during Win32 OpenGL initialization locally and having very specific cleanup function calls, at least I think so.
+
 ## GOTO statements: The poor man's version of RAII in C
 
 Without RAII, you would be out of luck here. You either stick with the manual copy-pasting
@@ -259,6 +263,38 @@ project by [moon-chilled](https://github.com/moon-chilled) which operates on
 `setjmp` and `longjmp` to make `defer` work with MSVC's C compiler. It
 introduces performance overhead as opposed to GCC or Clang, and there's a limit
 of 32 deferred statements by default (which is plenty).
+
+***UPDATE (2026-09-13):*** You know what? During a work on another C project where I had to use this I figured out a better way to write the above snippet by initializing the success variable to be `false` by default and only changing to `ok = true` on the happy path.
+
+```cpp
+bool ok = false; // You don't get toasted anymore
+if (!fakeRenderingContext)
+{
+    goto cleanup_my_fake_window;
+}
+
+if (!wglMakeCurrent(fakeDeviceContext, fakeRenderingContext))
+{
+    goto cleanup_my_fake_rendering_context;
+}
+
+if (!gladLoadWGL(fakeDeviceContext, reinterpret_cast<GLADloadfunc>(wglGetProcAddress)))
+{
+    goto cleanup_my_fake_rendering_context;
+}
+
+ok = true;  // All fine and dandy
+
+cleanup_my_fake_rendering_context:
+    wglDeleteContext(fakeRenderingContext);
+cleanup_my_fake_window:
+    ReleaseDC(fakeWindow, fakeDeviceContext);
+    DestroyWindow(fakeWindow);
+
+return ok;
+```
+
+This way you won't footgun yourself because of forgetting to assign `ok = false` on every error path. The fewer failure points you introduce into your code the better.
 
 ## Naively using RAII won't work
 
@@ -855,3 +891,21 @@ dive like this. If there's one thing that you should get out of this, is that
 don't apply `std::function` blindly everywhere. And implementing `defer` in C
 using `__attribute(cleanup)__` will be left as homework to you.
 
+## References
+
+- [Ignacio Castaño - scope(exit) in C++11](http://the-witness.net/news/2012/11/scopeexit-in-c11/)
+- [gingerBill - A Defer Statement For C++11](https://www.gingerbill.org/article/2015/08/19/defer-in-cpp/)
+- [Oded Lazar - Implemeting Go's defer keyword in C++](https://oded.dev/2017/10/05/go-defer-in-cpp/)
+- [OpenGL Wiki - Creating an OpenGL Context (WGL)](https://www.khronos.org/opengl/wiki/Creating_an_OpenGL_Context_(WGL))
+- [gl46 docs - `gl_get_proc_address`](https://docs.rs/gl46/latest/gl46/#gl_get_proc_address)
+- [xDahl - Casey Muratori | Smart-Pointers, RAII, ZII? Becoming an N+2 programmer](https://www.youtube.com/watch?v=xt1KNDmOYqA)
+- [Eli Bendersky - Using goto for error handling in C](https://eli.thegreenplace.net/2009/04/27/using-goto-for-error-handling-in-c)
+- [Max Vilimpoc - raii in c](https://vilimpoc.org/research/raii-in-c/)
+- [The Linux Kernel documentation - Scope-based Cleanup Helpers](https://docs.kernel.org/core-api/cleanup.html)
+- [Using the GNU Compiler Collection (GCC) - `__attribute__(cleanup)`](https://gcc.gnu.org/onlinedocs/gcc/Common-Variable-Attributes.html#index-cleanup-variable-attribute)
+- [Snaipe - Implementing smart pointers for the C programming language](https://snai.pe/posts/c-smart-pointers)
+- [Jussi Pakkanen - Comparing GCC C cleanup attribute with C++ RAII](https://nibblestew.blogspot.com/2016/07/comparing-gcc-c-cleanup-attribute-with.html)
+- [moon-chilled - Defer](https://github.com/moon-chilled/Defer)
+- [Zig Language Reference - `defer`](https://ziglang.org/documentation/master/#defer)
+- [Zig Language Reference - `errdefer`](https://ziglang.org/documentation/master/#errdefer)
+- [Dlang Tour - Scope guards](https://tour.dlang.org/tour/en/gems/scope-guards)
