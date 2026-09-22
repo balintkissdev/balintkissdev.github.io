@@ -1,3 +1,14 @@
+- id: awesome-dos
+  title: "Awesome DOS"
+  repoUrl: "https://github.com/balintkissdev/awesome-dos#readme"
+  domain: "Retro programming"
+  image: "awesome_dos_preview.png"
+  githubStarRepo: "balintkissdev/awesome-dos"
+  description: |
+    Thanks to my nostalgia for retro DOS computing, I curated a list of references for development of DOS applications and learning about the system itself. The goal of this list is to collect information and act as a starting point for someone who wants to start out retro-programming for the DOS platform.
+
+    This list is [featured](https://twitter.com/awesome__re/status/1355813614469271555) on the official [Awesome collection](https://github.com/sindresorhus/awesome) made by Sindre Sorhus.
+
 - id: 3d-renderer-cpp
   title: "Real-time C++ 3D renderer"
   repoUrl: "https://github.com/balintkissdev/3d-renderer-cpp"
@@ -6,28 +17,17 @@
   badges: ["C++", "Direct3D 12", "OpenGL", "WebGL", "WebAssembly", "Emscripten"]
   image: "3d_renderer_cpp_preview.png"
   description: |
-    A hardware-accelerated 3D renderer written in C++. Runs using Direct3D 12 or OpenGL as graphics API on desktop and WebGL2 in web browsers. Live demo compiled to WebAssembly using Emscripten.
+    API-agnostic C++ 3D renderer supporting Direct3D 12 or OpenGL as selectable graphics API backends. Whenever I want to experiment with a new rendering technique, I use this as a sandbox. Live demo compiled to WebAssembly using Emscripten.
 
-- id: awesome-dos
-  title: "Awesome DOS"
-  repoUrl: "https://github.com/balintkissdev/awesome-dos#readme"
-  domain: "Retro programming"
-  image: "awesome_dos_preview.png"
-  githubStarRepo: "balintkissdev/awesome-dos"
-  description: |
-    Curated list of references for development of DOS applications and learning about the system itself. The goal of this list is to collect information and act as a starting point for someone who wants to start out retro-programming for the DOS platform.
-
-    This list is [featured](https://twitter.com/awesome__re/status/1355813614469271555) on the official [Awesome collection](https://github.com/sindresorhus/awesome) made by Sindre Sorhus.
-
-- id: 3d-renderer-rust
-  title: "Real-time Rust 3D renderer"
-  repoUrl: "https://github.com/balintkissdev/3d-renderer-rust"
-  demoUrl: "/3d-renderer-rust"
+- id: raycaster-engine
+  title: "Raycasting pseudo-3D graphics engine"
+  repoUrl: "https://github.com/balintkissdev/raycaster-engine"
+  demoUrl: "/raycaster-engine/"
   domain: "Graphics"
-  badges: ["Rust", "OpenGL", "WebGL", "WebAssembly"]
-  image: "3d_renderer_rust_preview.png"
+  badges: ["C++", "SDL2", "WebAssembly", "Emscripten"]
+  image: "raycaster_engine_preview.png"
   description: |
-    A hardware-accelerated 3D renderer written in Rust. Runs using OpenGL 4 as graphics API on desktop and WebGL2 on WebAssembly. Live demo compiled to WebAssembly using Emscripten.
+    Retro 3D graphics engine demo inspired by techniques used in Wolfenstein 3D. Uses CPU-based software rendering to project 2D level maps into 3D space, includes double-buffering and texture mapping. Trivia: this was the project I made back in 2016 that helped me get better at C++.
 
 - id: realtime-chat-rust
   title: "Real-time chat application service written in Rust"
@@ -38,12 +38,3 @@
   description: |
     A TCP/WebSocket networking project used to mix together Rust for chat backend and TypeScript for frontend.
 
-- id: raycaster-engine
-  title: "Raycasting pseudo-3D graphics engine"
-  repoUrl: "https://github.com/balintkissdev/raycaster-engine"
-  demoUrl: "/raycaster-engine/"
-  domain: "Graphics"
-  badges: ["C++", "SDL2", "WebAssembly", "Emscripten"]
-  image: "raycaster_engine_preview.png"
-  description: |
-    Retro 3D graphics engine demo I've written back in 2016, inspired by techniques used in Wolfenstein 3D. Uses vector math and CPU-based software rendering to turn 2D maps into 3D space, includes double-buffering and texture mapping. Live demo compiled to WebAssembly using Emscripten.
