@@ -14,10 +14,10 @@
   repoUrl: "https://github.com/balintkissdev/3d-renderer-cpp"
   demoUrl: "/3d-renderer-cpp"
   domain: "Graphics"
-  badges: ["C++", "Direct3D 12", "OpenGL", "WebGL", "WebAssembly", "Emscripten"]
+  badges: ["C++", "Direct3D 12", "OpenGL", "WebGL", "ImGui", "WebAssembly", "Emscripten"]
   image: "3d_renderer_cpp_preview.png"
   description: |
-    API-agnostic C++ 3D renderer supporting Direct3D 12 or OpenGL as selectable graphics API backends. Whenever I want to experiment with a new rendering technique, I use this as a sandbox. Live demo compiled to WebAssembly using Emscripten.
+    API-agnostic C++ 3D renderer supporting Direct3D 12 or OpenGL as selectable graphics API backends. Whenever I want to experiment with a new rendering technique, I use this as a sandbox.
 
 - id: raycaster-engine
   title: "Raycasting pseudo-3D graphics engine"
